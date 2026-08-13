@@ -3,10 +3,12 @@
 Slide deck แบบเว็บ สรุปการใช้งาน Claude จากเอกสาร [Claude Help Center](https://support.claude.com/en/) อย่างเป็นทางการ
 เนื้อหาเป็นภาษาไทย โดยคง technical term เป็นภาษาอังกฤษตามเดิม
 
+**เปิดอ่านได้ที่ → [suphakornp.github.io/claude-help-center-thai-deck](https://suphakornp.github.io/claude-help-center-thai-deck/)**
+
 ## เปิดใช้งาน
 
-เปิดไฟล์ `index.html` ด้วย browser ได้ตรง ๆ (double-click) — ไม่ต้องติดตั้งอะไร ไม่ต้องต่ออินเทอร์เน็ต
-ยกเว้นตอนกดลิงก์อ้างอิงที่จะเปิดไปยัง support.claude.com
+เปิดผ่านลิงก์ด้านบนได้เลย หรือเปิดไฟล์ `index.html` ด้วย browser ตรง ๆ (double-click) — ไม่ต้องติดตั้งอะไร
+ไม่ต้องต่ออินเทอร์เน็ต ยกเว้นตอนกดลิงก์อ้างอิงที่จะเปิดไปยัง support.claude.com
 
 หากต้องการเปิดผ่าน local server:
 
