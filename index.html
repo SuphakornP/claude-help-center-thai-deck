@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claude · Cowork · Code — คู่มือฉบับ Slide Deck</title>
+<meta name="description" content="Slide deck ภาษาไทยสรุปการใช้งาน Claude, Claude Cowork, Claude Code, Claude Desktop, Claude Mobile apps, Connectors และ Claude in Chrome อ้างอิงจาก Claude Help Center อย่างเป็นทางการ">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/style.css?v=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C96442'/><path d='M28 70 L50 28 L72 70 M37 58 L63 58' stroke='%23FAF9F5' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+
+<div class="progress"><i id="bar"></i></div>
+
+<header class="topbar">
+  <a class="brand" href="#s1"><span class="dot"></span><b>Claude Help Center</b><span class="t2">· Slide Deck ภาษาไทย</span></a>
+  <div class="tools">
+    <button class="icobtn" id="themeBtn" aria-label="สลับธีม">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="deck" id="deck">
+
+<!-- ══════════════ 01 · COVER ══════════════ -->
+<section class="slide cover" id="s1" data-chapter="0" data-group="เปิดเรื่อง" data-nav="หน้าปก">
+  <div class="cover-bg" aria-hidden="true">
+    <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span><span class="glow"></span>
+  </div>
+  <div class="inner">
+    <div class="kicker reveal"><em>Official Support Reference</em> <span>·</span> <span>support.claude.com</span></div>
+    <h1 class="big reveal">
+      <span>ใช้งาน Claude</span>
+      <span class="m">ให้เต็มศักยภาพ</span>
+    </h1>
+    <p class="sub reveal">คู่มือสรุปภาษาไทย 7 หัวข้อหลัก — Claude, Claude Cowork, Claude Code, Claude Desktop, Claude Mobile apps, Connectors และ Claude in Chrome เรียบเรียงจากเอกสาร Claude Help Center อย่างเป็นทางการ พร้อมลิงก์อ้างอิงกลับทุกสไลด์</p>
+    <div class="cover-meta reveal">
+      <span><b>7</b> หัวข้อ</span>
+      <span><b>50</b> สไลด์</span>
+      <span>ข้อมูล ณ <b>13 ส.ค. 2026</b></span>
+      <span>Design by <b>Claude</b></span>
+    </div>
+    <div class="hint reveal">
+      <span class="keys"><kbd>←</kbd><kbd>→</kbd></span> หรือปัดหน้าจอเพื่อเลื่อนสไลด์
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/" target="_blank" rel="noopener"><span>Claude Help Center — แหล่งอ้างอิงทั้งหมดของ deck นี้</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ 02 · สารบัญ ══════════════ -->
+<section class="slide" id="s2" data-chapter="0" data-group="เปิดเรื่อง" data-nav="สารบัญ 7 หัวข้อ">
+  <div class="inner">
+    <div class="eyebrow reveal">สารบัญ</div>
+    <h2 class="title wide reveal">7 หัวข้อที่ครอบคลุมใน deck นี้</h2>
+    <p class="lead reveal">แต่ละหัวข้อคือ collection หนึ่งบน Claude Help Center — เรียงจากตัวผลิตภัณฑ์หลัก ไปสู่ surface และส่วนขยาย</p>
+
+    <div class="grid g4 reveal">
+      <div class="card" style="--accent:var(--c1)"><span class="num">01</span><span class="k">Chapter 01</span><h4>Claude</h4><p>ตัวผลิตภัณฑ์หลัก — แผนการใช้งาน, Projects, Skills, Artifacts, Research, usage limits</p></div>
+      <div class="card" style="--accent:var(--c2)"><span class="num">02</span><span class="k">Chapter 02</span><h4>Claude Cowork</h4><p>Agentic knowledge work — สั่งงานแล้วปล่อยให้ทำต่อ, scheduled tasks, computer use</p></div>
+      <div class="card" style="--accent:var(--c3)"><span class="num">03</span><span class="k">Chapter 03</span><h4>Claude Code</h4><p>เขียนโค้ดใน terminal และ IDE, Claude Code on the web, security review</p></div>
+      <div class="card" style="--accent:var(--c4)"><span class="num">04</span><span class="k">Chapter 04</span><h4>Claude Desktop</h4><p>แอปบน macOS / Windows / Linux, Quick Entry, desktop extensions</p></div>
+    </div>
+    <div class="grid g4 reveal" style="margin-top:14px">
+      <div class="card" style="--accent:var(--c5)"><span class="num">05</span><span class="k">Chapter 05</span><h4>Claude Mobile apps</h4><p>iOS และ Android, voice mode, dictation, widgets และ app intents</p></div>
+      <div class="card" style="--accent:var(--c6)"><span class="num">06</span><span class="k">Chapter 06</span><h4>Connectors</h4><p>ต่อ Claude เข้ากับ apps ผ่าน MCP — directory, custom, desktop extensions</p></div>
+      <div class="card" style="--accent:var(--c7)"><span class="num">07</span><span class="k">Chapter 07</span><h4>Claude in Chrome</h4><p>Extension ที่ให้ Claude อ่านและใช้งานเว็บแทนเรา พร้อมระบบ permission</p></div>
+      <div class="card flat plain" style="--accent:var(--ink3)"><span class="num">08</span><span class="k">Wrap-up</span><h4>สรุป &amp; อ้างอิง</h4><p>ตารางเลือก surface ให้เหมาะกับงาน และรวมลิงก์เอกสารทั้งหมด</p></div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/" target="_blank" rel="noopener"><span>Claude Help Center — หน้าหลัก</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ 03 · แผนที่ ecosystem ══════════════ -->
+<section class="slide" id="s3" data-chapter="0" data-group="เปิดเรื่อง" data-nav="ภาพรวม ecosystem">
+  <div class="inner">
+    <div class="eyebrow reveal">ภาพรวม</div>
+    <h2 class="title wide reveal">Claude หนึ่งบัญชี ใช้ได้หลาย surface</h2>
+    <p class="lead reveal">โมเดลเดียวกัน บัญชีเดียวกัน แต่เข้าถึงได้จากหลายทาง — โดยมี <b>Connectors (MCP)</b> เป็นชั้นกลางที่ทำให้ Claude เข้าถึงข้อมูลและเครื่องมือของเราได้</p>
+
+    <div class="figure reveal">
+      <svg viewBox="0 0 900 340" role="img" aria-label="แผนภาพแสดง Claude เป็นศูนย์กลาง เชื่อมต่อกับ surface ต่าง ๆ ผ่าน Connectors">
+        <!-- center -->
+        <rect class="svg-node-a" x="350" y="130" width="200" height="80" rx="16"/>
+        <text class="svg-t" x="450" y="163" text-anchor="middle" style="font-size:17px">Claude</text>
+        <text class="svg-s" x="450" y="185" text-anchor="middle">one account · one model family</text>
+
+        <!-- top row surfaces -->
+        <rect class="svg-node" x="40"  y="24" width="160" height="58" rx="12"/>
+        <text class="svg-t" x="120" y="49" text-anchor="middle">Chat · claude.ai</text>
+        <text class="svg-s" x="120" y="67" text-anchor="middle">web</text>
+
+        <rect class="svg-node" x="225" y="24" width="160" height="58" rx="12"/>
+        <text class="svg-t" x="305" y="49" text-anchor="middle">Claude Desktop</text>
+        <text class="svg-s" x="305" y="67" text-anchor="middle">macOS · Windows · Linux</text>
+
+        <rect class="svg-node" x="410" y="24" width="160" height="58" rx="12"/>
+        <text class="svg-t" x="490" y="49" text-anchor="middle">Mobile apps</text>
+        <text class="svg-s" x="490" y="67" text-anchor="middle">iOS · Android</text>
+
+        <rect class="svg-node" x="595" y="24" width="160" height="58" rx="12"/>
+        <text class="svg-t" x="675" y="49" text-anchor="middle">Claude in Chrome</text>
+        <text class="svg-s" x="675" y="67" text-anchor="middle">browser extension</text>
+
+        <!-- bottom row modes -->
+        <rect class="svg-node" x="130" y="258" width="170" height="58" rx="12"/>
+        <text class="svg-t" x="215" y="283" text-anchor="middle">Claude Cowork</text>
+        <text class="svg-s" x="215" y="301" text-anchor="middle">agentic knowledge work</text>
+
+        <rect class="svg-node" x="365" y="258" width="170" height="58" rx="12"/>
+        <text class="svg-t" x="450" y="283" text-anchor="middle">Claude Code</text>
+        <text class="svg-s" x="450" y="301" text-anchor="middle">terminal · IDE · web</text>
+
+        <rect class="svg-node" x="600" y="258" width="170" height="58" rx="12"/>
+        <text class="svg-t" x="685" y="283" text-anchor="middle">API &amp; Console</text>
+        <text class="svg-s" x="685" y="301" text-anchor="middle">platform.claude.com</text>
+
+        <!-- connector band -->
+        <rect class="svg-node-a" x="760" y="130" width="118" height="80" rx="14"/>
+        <text class="svg-t" x="819" y="160" text-anchor="middle" style="font-size:13px">Connectors</text>
+        <text class="svg-s" x="819" y="180" text-anchor="middle">MCP</text>
+
+        <!-- links -->
+        <path class="svg-l" d="M120 82 V110 Q120 130 200 140 L350 160"/>
+        <path class="svg-l" d="M305 82 V120 L400 132"/>
+        <path class="svg-l" d="M490 82 V120 L495 130"/>
+        <path class="svg-l" d="M675 82 V110 Q675 130 600 142 L552 155"/>
+        <path class="svg-l-a" d="M215 258 V230 Q215 210 300 195 L350 186"/>
+        <path class="svg-l-a" d="M450 258 V212"/>
+        <path class="svg-l-a" d="M685 258 V230 Q685 210 600 196 L552 188"/>
+        <path class="svg-l-a" d="M550 170 H760"/>
+      </svg>
+      <p class="figcap">โครงสร้างเชิงแนวคิด เรียบเรียงจากหน้า “What interfaces can I use to access Claude?” และ collection ทั้ง 7 หัวข้อ</p>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/8114487-what-interfaces-can-i-use-to-access-claude" target="_blank" rel="noopener"><span>What interfaces can I use to access Claude?</span></a>
+      <a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" target="_blank" rel="noopener"><span>Where can I access Claude?</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 01 · CLAUDE ══════════════ -->
+<section class="slide chapter" id="s4" data-chapter="1" data-group="01 · Claude" data-nav="เปิดบท Claude">
+  <div class="inner">
+    <div class="no reveal">01</div>
+    <div>
+      <div class="eyebrow reveal">Chapter One</div>
+      <h2 class="reveal">Claude</h2>
+      <p class="lead reveal">ผู้ช่วย AI จาก Anthropic ที่ใช้ได้ทั้งบนเว็บ desktop และมือถือ — บทนี้ปูพื้นตั้งแต่การเลือกแผน ไปจนถึงฟีเจอร์หลักที่ทำให้ Claude ต่างจาก chatbot ทั่วไป</p>
+      <div class="agenda reveal">
+        <span>Claude คืออะไร</span><span>แผนการใช้งาน</span><span>Projects</span><span>Skills</span>
+        <span>Artifacts</span><span>Search · Thinking · Research</span><span>Memory</span><span>Usage limits</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/4078531-claude" target="_blank" rel="noopener"><span>Collection: Claude</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="slide" id="s5" data-chapter="1" data-group="01 · Claude" data-nav="Claude คืออะไร">
+  <div class="inner">
+    <div class="eyebrow reveal">พื้นฐาน</div>
+    <h2 class="title reveal">Claude คืออะไร และเริ่มต้นอย่างไร</h2>
+    <p class="lead reveal">Claude คือ large language model (LLM) ที่สร้างโดย Anthropic ออกแบบให้เป็นผู้ช่วยที่ <b>helpful, honest, and harmless</b> พร้อมน้ำเสียงแบบสนทนา</p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>รับได้ทั้งงานง่ายและงานซับซ้อน</h4>
+        <p>ตั้งแต่คำถามข้อเท็จจริงสั้น ๆ ไปจนถึงโปรเจกต์หลายขั้นตอน งานเขียนเชิงสร้างสรรค์ งานเขียนโค้ด และการวิเคราะห์เชิงเทคนิค</p>
+      </div>
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h9M5 16h12"/><circle cx="19" cy="16" r="1.6"/></svg></div>
+        <h4>รองรับหลายภาษา</h4>
+        <p>ผ่านการเทรนด้วยภาษาอังกฤษอย่างเข้มข้น และทำงานได้ดีในภาษาอื่นที่ใช้กันแพร่หลาย รวมถึงภาษาโปรแกรมต่าง ๆ</p>
+      </div>
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h4>ปรับ model และ effort ได้</h4>
+        <p>สลับไปใช้โมเดลอื่นที่มีให้ พร้อมปรับระดับ effort และ thinking settings ได้จากในหน้าจอสนทนา</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>ข้อกำหนดการใช้งาน —</b> ผู้ใช้ต้องมีอายุอย่างน้อย <b>18 ปี</b> และอยู่ในภูมิภาคที่รองรับ · ผู้ใช้แผน Free จะมี session-based usage limit ที่ <b>reset ทุก 5 ชั่วโมง</b> โดยจำนวนข้อความที่ส่งได้จะแปรผันตามภาระของระบบในขณะนั้น
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" target="_blank" rel="noopener"><span>Get started with Claude</span></a>
+      <a href="https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for" target="_blank" rel="noopener"><span>What can I use Claude for?</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="slide" id="s6" data-chapter="1" data-group="01 · Claude" data-nav="ช่องทางเข้าใช้งาน">
+  <div class="inner">
+    <div class="eyebrow reveal">Interfaces</div>
+    <h2 class="title wide reveal">เข้าถึง Claude ได้จากช่องทางไหนบ้าง</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">Primary</span><h4>Chat — claude.ai</h4><p>ใช้งานผ่าน browser ได้ทันที ไม่ต้องติดตั้งอะไร</p></div>
+      <div class="card"><span class="k">Primary</span><h4>Claude Desktop</h4><p>แอป native บน macOS, Windows และ Linux (beta) ดาวน์โหลดที่ claude.ai/download</p></div>
+      <div class="card"><span class="k">Primary</span><h4>Mobile apps</h4><p>Claude for iOS บน App Store และ Claude for Android บน Google Play</p></div>
+      <div class="card"><span class="k">Developer</span><h4>Claude Console / API</h4><p>platform.claude.com สำหรับนักพัฒนา พร้อมเอกสารที่ docs.claude.com</p></div>
+      <div class="card"><span class="k">Extension</span><h4>Claude in Chrome</h4><p>Extension ที่ให้ Claude อ่านและใช้งานหน้าเว็บให้เรา (ดูบทที่ 07)</p></div>
+      <div class="card"><span class="k">Extension</span><h4>ในเครื่องมือที่ใช้อยู่แล้ว</h4><p>Claude for Excel, PowerPoint, Word, Outlook, Claude in Xcode และผ่าน Amazon Bedrock</p></div>
+    </div>
+
+    <div class="note reveal">
+      <b>สิ่งที่ควรจำ —</b> ทุกช่องทางใช้ <b>บัญชี Claude เดียวกัน</b> ดังนั้นแผนที่สมัครไว้ (Pro, Max, Team, Enterprise) จะครอบคลุมทุก surface และ usage limit ก็ใช้โควตาก้อนเดียวกันด้วย
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/8114487-what-interfaces-can-i-use-to-access-claude" target="_blank" rel="noopener"><span>What interfaces can I use to access Claude?</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="slide" id="s7" data-chapter="1" data-group="01 · Claude" data-nav="เลือกแผนการใช้งาน">
+  <div class="inner">
+    <div class="eyebrow reveal">Plans</div>
+    <h2 class="title wide reveal">เลือกแผนให้ตรงกับปริมาณงาน</h2>
+
+    <div class="tblwrap reveal">
+      <table>
+        <thead><tr><th style="width:16%">แผน</th><th style="width:20%">ราคา</th><th>เหมาะกับใคร</th></tr></thead>
+        <tbody>
+          <tr><td><b>Free</b></td><td>$0</td><td>ใช้เป็นครั้งคราว ปริมาณการใช้งานจำกัด<small>session-based limit reset ทุก 5 ชั่วโมง</small></td></tr>
+          <tr><td><b>Pro</b></td><td>$20 / เดือน<small>หรือ $200 / ปี</small></td><td>ใช้งานสม่ำเสมอ ได้ capacity ระดับมาตรฐาน และเป็นจุดเริ่มต้นของการใช้ Claude Code และ Cowork</td></tr>
+          <tr><td><b>Max 5×</b></td><td>$100 / เดือน</td><td>ได้ capacity <b>5 เท่าของ Pro</b> ต่อ session สำหรับคนที่ทำงานกับ Claude ทุกวัน</td></tr>
+          <tr><td><b>Max 20×</b></td><td>$200 / เดือน</td><td>ได้ capacity <b>20 เท่าของ Pro</b> ต่อ session สำหรับงานหนักต่อเนื่อง</td></tr>
+          <tr><td><b>Team</b></td><td>usage-based</td><td>ทีมที่ต้องแชร์ projects ร่วมกัน มี admin controls และรวม Claude Code ในทุก seat</td></tr>
+          <tr><td><b>Enterprise</b></td><td>custom</td><td>องค์กรที่ต้องการ security &amp; compliance ขั้นสูง เครื่องมือดูแลระบบ และ dedicated support</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note reveal">
+      แผน Free, Pro และ Max เป็นแผนสำหรับ <b>บุคคล</b> ส่วน Team และ Enterprise เป็นแผนสำหรับ <b>องค์กร</b> — ราคาและเงื่อนไขอาจเปลี่ยนแปลง ควรตรวจสอบหน้าอ้างอิงก่อนตัดสินใจ
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11049762-choose-a-claude-plan" target="_blank" rel="noopener"><span>Choose a Claude plan</span></a>
+      <a href="https://support.claude.com/en/collections/5953830-pro-and-max-plans" target="_blank" rel="noopener"><span>Pro and Max plans</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="slide" id="s8" data-chapter="1" data-group="01 · Claude" data-nav="Projects">
+  <div class="inner">
+    <div class="eyebrow reveal">Feature</div>
+    <h2 class="title reveal">Projects — พื้นที่ทำงานที่มีบริบทของตัวเอง</h2>
+    <p class="lead reveal">Projects คือ workspace แบบ self-contained ที่มี chat history และ knowledge base เป็นของตัวเอง เหมาะกับงานที่ต้องอ้างอิงเอกสารชุดเดิมซ้ำ ๆ</p>
+
+    <div class="grid g23 reveal">
+      <div>
+        <ul class="ticks">
+          <li><b>Knowledge base</b> — อัปโหลดไฟล์ที่เกี่ยวข้องเข้าไป แล้ว Claude จะอ้างอิงระหว่างสนทนาโดยไม่ต้องแนบใหม่ทุกครั้ง</li>
+          <li><b>Custom instructions</b> — กำหนดโทน มุมมอง หรือบริบทเฉพาะอุตสาหกรรมให้ Claude ใช้กับทุกแชทใน project นั้น</li>
+          <li><b>RAG</b> — บนแผนที่เสียเงิน ระบบ retrieval augmented generation จะขยายความจุ knowledge ได้ <b>สูงสุด 10 เท่า</b></li>
+          <li><b>แชร์ในทีม</b> — เฉพาะแผน Team และ Enterprise ที่แชร์ project ให้สมาชิกบางคนหรือทั้งองค์กรได้ พร้อมกำหนดสิทธิ์ view / edit</li>
+        </ul>
+      </div>
+      <div class="grid" style="margin-top:0">
+        <div class="card stat"><div class="v">5</div><div class="l">จำนวน projects สูงสุดของบัญชี Free</div></div>
+        <div class="card stat"><div class="v">10×</div><div class="l">ความจุ knowledge ที่เพิ่มขึ้นด้วย RAG บนแผนที่เสียเงิน</div></div>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener"><span>What are projects?</span></a>
+      <a href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects" target="_blank" rel="noopener"><span>RAG for projects</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="slide" id="s9" data-chapter="1" data-group="01 · Claude" data-nav="Skills">
+  <div class="inner">
+    <div class="eyebrow reveal">Feature</div>
+    <h2 class="title reveal">Skills — สอน Claude ให้ทำงานเฉพาะทางซ้ำได้</h2>
+    <p class="lead reveal">Skills คือ folder ที่รวม instructions, scripts และ resources ซึ่ง Claude จะ <b>load แบบ dynamic</b> เมื่อเจองานที่ตรงกับ skill นั้น</p>
+
+    <div class="grid g4 reveal">
+      <div class="card"><span class="k">Type</span><h4>Anthropic skills</h4><p>สร้างโดย Anthropic ถูกเรียกใช้อัตโนมัติเวลาสร้างเอกสาร Excel, Word, PowerPoint และ PDF</p></div>
+      <div class="card"><span class="k">Type</span><h4>Custom skills</h4><p>ผู้ใช้หรือองค์กรสร้างเองสำหรับ workflow เฉพาะทาง</p></div>
+      <div class="card"><span class="k">Type</span><h4>Organization provisioned</h4><p>admin ของแผน Team / Enterprise กระจายให้สมาชิกใช้ร่วมกัน</p></div>
+      <div class="card"><span class="k">Type</span><h4>Partner skills</h4><p>จากพาร์ตเนอร์อย่าง Notion, Figma และ Atlassian</p></div>
+    </div>
+
+    <div class="note reveal">
+      <b>Progressive disclosure —</b> Claude จะไล่ดูรายการ skills ที่มี เลือกอันที่เกี่ยวข้อง แล้วโหลดเฉพาะข้อมูลที่จำเป็นกับงานตรงหน้า จึงไม่กิน context window เกินจำเป็น
+    </div>
+
+    <div class="note reveal">
+      <b>ใครใช้ได้ —</b> ทุกแผนตั้งแต่ Free ถึง Enterprise โดยต้องเปิด <b>code execution</b> ไว้ · นอกจากนี้ยังใช้ได้ในสถานะ beta บน Claude Code และกับผู้ใช้ API ทุกคนที่เปิด code execution tool
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12512176-what-are-skills" target="_blank" rel="noopener"><span>What are skills?</span></a>
+      <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank" rel="noopener"><span>How to create custom skills</span></a>
+      <a href="https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory" target="_blank" rel="noopener"><span>Browse skills, connectors, and plugins</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide" id="s10" data-chapter="1" data-group="01 · Claude" data-nav="Artifacts">
+  <div class="inner">
+    <div class="eyebrow reveal">Feature</div>
+    <h2 class="title reveal">Artifacts — เปลี่ยนไอเดียเป็นชิ้นงานที่แชร์ได้</h2>
+    <p class="lead reveal">Artifacts แสดงเนื้อหาชิ้นใหญ่ที่สมบูรณ์ในตัวเองไว้ในหน้าต่างแยกจากแชท ทำให้แก้ไข ดาวน์โหลด และแชร์ได้สะดวก</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">รองรับอะไรบ้าง</span>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip">Documents (Markdown)</span><span class="chip">Code snippets</span>
+          <span class="chip">HTML websites</span><span class="chip">SVG images</span>
+          <span class="chip">Diagrams &amp; flowcharts</span><span class="chip">React components</span>
+        </div>
+      </div>
+      <div class="card">
+        <span class="k">วิธีใช้</span>
+        <ol class="steps" style="margin-top:6px">
+          <li>เปิด <b>Code execution and file creation</b> ที่ Settings &gt; Capabilities (แผนองค์กรตั้งที่ Organization settings)</li>
+          <li>ดู artifacts ทั้งหมดได้ที่ส่วน <b>Artifacts</b> บน sidebar</li>
+          <li>แก้ไขได้ผ่านแชท หรือกับ Markdown ให้ไฮไลต์ข้อความแล้วกด <b>Edit with Claude</b></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>Publish &amp; share —</b> artifact ที่ publish แล้วจะได้ URL เฉพาะของตัวเอง เลือกแชร์สาธารณะได้ และเก็บถาวรได้ภายใต้โควตา <b>20 MB</b> บนแผน Pro / Max / Team / Enterprise · หากมีคนอื่นเปิดใช้ artifact ที่เรียกใช้ AI ต้นทุนจะไปนับกับ subscription ของผู้ใช้คนนั้น ไม่ใช่ของผู้สร้าง
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener"><span>What are artifacts and how do I use them?</span></a>
+      <a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank" rel="noopener"><span>Publish and share artifacts</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide" id="s11" data-chapter="1" data-group="01 · Claude" data-nav="Search · Thinking · Research">
+  <div class="inner">
+    <div class="eyebrow reveal">เลือกเครื่องมือให้ถูก</div>
+    <h2 class="title wide reveal">Web search · Extended thinking · Research</h2>
+    <p class="lead reveal">สามอย่างนี้แก้ปัญหาคนละแบบ เลือกผิดจะได้คำตอบช้าหรือไม่ครบ</p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <span class="k">1–2 tool calls</span>
+        <h4>Web search</h4>
+        <p>เหมาะกับคำถามข้อเท็จจริงตรงไปตรงมาที่ตอบได้ด้วยการค้นหนึ่งถึงสองครั้ง เช่น เช็คสภาพอากาศ หาข้อมูลบริษัทใดบริษัทหนึ่ง หรือดึงพาดหัวข่าวล่าสุด</p>
+      </div>
+      <div class="card">
+        <span class="k">ไม่ต้องพึ่งเว็บ</span>
+        <h4>Extended thinking</h4>
+        <p>เหมาะที่สุดกับงานที่ต้องใช้เหตุผลซับซ้อนแต่ไม่ต้องการข้อมูลใหม่จากอินเทอร์เน็ต เช่น แก้โจทย์คณิตศาสตร์ debug โค้ด หรือวิเคราะห์แนวคิดเชิงปรัชญา</p>
+      </div>
+      <div class="card">
+        <span class="k">5+ tool calls · 1–3 นาที</span>
+        <h4>Research</h4>
+        <p>สังเคราะห์ข้อมูลจากหลายแหล่งทั้งบนเว็บและจาก integrations ของเรา ออกมาเป็นรายงานเชิงลึก เหมาะกับงานที่ต้องค้นหลายรอบ</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>ใช้ร่วมกันได้ —</b> เปิด research พร้อม extended thinking จะทำให้ Claude วางแผนอย่างรอบคอบ <i>และ</i> เก็บข้อมูลอย่างครอบคลุมไปพร้อมกัน เช่นตอนค้นหาเทคโนโลยีใหม่เพื่อทำ business proposal
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research" target="_blank" rel="noopener"><span>When should I use web search, extended thinking, and research?</span></a>
+      <a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener"><span>Use research on Claude</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="slide" id="s12" data-chapter="1" data-group="01 · Claude" data-nav="Memory · แชท · Usage">
+  <div class="inner">
+    <div class="eyebrow reveal">จัดการบทสนทนา &amp; โควตา</div>
+    <h2 class="title wide reveal">Memory, chat search และการดูแล usage limits</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.4-3.4"/></svg></div>
+        <h4>Chat search &amp; memory</h4>
+        <p>ให้ Claude ค้นบทสนทนาเก่าและใช้ memory ต่อยอดบริบทเดิม พร้อม import / export memory ได้</p>
+      </div>
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"/><path d="M4 4l16 16"/></svg></div>
+        <h4>Incognito chats</h4>
+        <p>คุยแบบไม่บันทึกลงประวัติ เหมาะกับเรื่องที่ไม่อยากให้ค้างอยู่ใน chat history</p>
+      </div>
+      <div class="card">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+        <h4>Usage &amp; length limits</h4>
+        <p>ดูโควตาที่เหลือได้ที่ Settings &gt; Usage และซื้อ usage bundles เพิ่มได้เมื่อโควตาหมด</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>เทคนิคยืดโควตา —</b> เริ่มแชทใหม่เมื่อเปลี่ยนหัวข้อแทนการต่อบทสนทนาเดิมที่ยาวมาก, แนบเฉพาะไฟล์ที่จำเป็น, และเลือกโมเดลให้พอดีกับความยากของงาน — บทสนทนาที่ยาวขึ้นหมายถึงการใช้ context มากขึ้นในทุก ๆ ข้อความถัดไป
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" target="_blank" rel="noopener"><span>How do usage and length limits work?</span></a>
+      <a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" target="_blank" rel="noopener"><span>Usage limit best practices</span></a>
+      <a href="https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context" target="_blank" rel="noopener"><span>Chat search and memory</span></a>
+      <a href="https://support.claude.com/en/articles/12260368-use-incognito-chats" target="_blank" rel="noopener"><span>Use incognito chats</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 02 · CLAUDE COWORK ══════════════ -->
+<section class="slide chapter" id="s13" data-chapter="2" data-group="02 · Claude Cowork" data-nav="เปิดบท Cowork">
+  <div class="inner">
+    <div class="no reveal">02</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Two</div>
+      <h2 class="reveal">Claude Cowork</h2>
+      <p class="lead reveal">พา Claude ออกจากกรอบ “ถาม–ตอบ” ไปสู่การรับงานหลายขั้นตอนแล้วลงมือทำแทนเรา — บอกผลลัพธ์ที่ต้องการ เดินไปทำอย่างอื่น แล้วกลับมารับงานที่เสร็จแล้ว</p>
+      <div class="agenda reveal">
+        <span>Cowork คืออะไร</span><span>ใช้ได้ที่ไหนบ้าง</span><span>ทำอะไรได้</span><span>Architecture</span>
+        <span>Permission modes</span><span>Scheduled tasks</span><span>Computer use</span><span>ความปลอดภัย</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/19667525-claude-cowork" target="_blank" rel="noopener"><span>Collection: Claude Cowork</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="slide" id="s14" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Cowork คืออะไร">
+  <div class="inner">
+    <div class="eyebrow reveal">พื้นฐาน</div>
+    <h2 class="title reveal">สั่งงานเป็น “ผลลัพธ์” ไม่ใช่ “คำถาม”</h2>
+    <p class="lead reveal">Cowork ทำให้ Claude รับงานที่ซับซ้อนหลายขั้นตอนไปทำแทนเราได้โดยไม่ต้องแตะ terminal — และทำงานต่อได้แม้เราจะลุกไปทำอย่างอื่น</p>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">เริ่มยังไง</span><h4>เลือก Cowork ในกล่องข้อความ</h4><p>บน desktop, web และ mobile หน้าแชทกับ Cowork ใช้ที่เดียวกัน กดสลับได้ทันที และกลับไปเป็นบทสนทนาปกติด้วยการเลือก <b>Chat</b></p></div>
+      <div class="card"><span class="k">ต้องมีอะไร</span><h4>ข้อกำหนดเบื้องต้น</h4><p>subscription แบบเสียเงิน · Claude Desktop app หากต้องการเข้าถึงไฟล์ในเครื่อง, browser use และ computer use · การเชื่อมต่ออินเทอร์เน็ต</p></div>
+      <div class="card"><span class="k">ทำงานที่ไหน</span><h4>Session ตามเราไปทุกเครื่อง</h4><p>session แบบ remote ทำงานบน cloud (beta) โดย session และไฟล์ผูกกับบัญชี Claude จึงตามเราไปทั้ง desktop, web และ mobile</p></div>
+    </div>
+
+    <div class="note reveal">
+      <b>ต้องเผื่อโควตา —</b> Cowork ใช้ usage allocation <b>มากกว่า</b> การแชทปกติ เพราะกินทรัพยากรการประมวลผลสูงกว่า ตรวจดูได้ที่ Settings &gt; Usage · แนะนำให้รวบงานที่เกี่ยวข้องกันไว้ในรอบเดียว และใช้แชทธรรมดากับงานง่าย ๆ
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener"><span>Get started with Claude Cowork</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" id="s15" data-chapter="2" data-group="02 · Claude Cowork" data-nav="ใช้ได้ที่ไหน">
+  <div class="inner">
+    <div class="eyebrow reveal">Availability</div>
+    <h2 class="title wide reveal">Cowork บน desktop, web และ mobile ต่างกันอย่างไร</h2>
+
+    <div class="tblwrap reveal">
+      <table>
+        <thead><tr><th style="width:34%">ความสามารถ</th><th>Desktop</th><th>Web</th><th>Mobile</th></tr></thead>
+        <tbody>
+          <tr><td>เริ่ม / กำกับ / ตรวจงาน</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>ทำ session ต่อข้ามอุปกรณ์</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Connectors</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Skills &amp; plugins</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Preview ไฟล์ · Scheduled tasks · Projects</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Live artifacts</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td>Local file access</td><td class="yes">✓</td><td class="yes">✓ *</td><td class="yes">✓ *</td></tr>
+          <tr><td>Browser use</td><td class="yes">✓</td><td class="yes">✓ *</td><td class="yes">✓ *</td></tr>
+          <tr><td>Computer use</td><td class="yes">✓</td><td class="yes">✓ *</td><td class="yes">✓ *</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figcap reveal" style="text-align:left">* ทำงานผ่าน <b>Claude Desktop app</b> จึงต้องเปิดแอปค้างไว้เพื่อให้เข้าถึงทรัพยากรในเครื่องได้</p>
+
+    <div class="note reveal">
+      <b>แผนที่ใช้ได้ —</b> Desktop, web และ mobile: <b>Pro, Max และ Team</b> ส่วน Enterprise ใช้ได้เมื่อ admin เปิดให้ · Claude Desktop สำหรับ Windows ใช้ได้ทุกแผนที่เสียเงิน โดยต้องเป็นเวอร์ชันล่าสุดจาก claude.com/download · <b>Chrome side panel</b>: Max และ Team ส่วน Pro กำลังทยอยเปิดให้ใช้
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" target="_blank" rel="noopener"><span>Use Claude Cowork on web, desktop, and mobile</span></a>
+      <a href="https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" target="_blank" rel="noopener"><span>Use Claude Cowork on Team and Enterprise plans</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="slide" id="s16" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Cowork ทำอะไรได้">
+  <div class="inner">
+    <div class="eyebrow reveal">Capabilities</div>
+    <h2 class="title wide reveal">งานแบบไหนที่ Cowork ทำได้ดี</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">Documents</span><h4>ผลิตเอกสารจริง</h4><p>สร้าง Excel ที่สูตรใช้งานได้จริง งาน PowerPoint และเอกสารที่จัดรูปแบบเรียบร้อย</p></div>
+      <div class="card"><span class="k">Files</span><h4>จัดระเบียบไฟล์</h4><p>จัดกลุ่มไฟล์ตามประเภทหรือวันที่ และเปลี่ยนชื่อทีละหลายไฟล์ด้วยรูปแบบที่สม่ำเสมอ</p></div>
+      <div class="card"><span class="k">Research</span><h4>สังเคราะห์ข้อมูล</h4><p>รวมข้อมูลจากหลายแหล่งให้เป็นรายงานเดียวที่อ่านต่อเนื่องเป็นเรื่องเดียวกัน</p></div>
+      <div class="card"><span class="k">Data</span><h4>วิเคราะห์ข้อมูล</h4><p>งานสถิติ การทำ visualization และการแปลงรูปแบบข้อมูล</p></div>
+      <div class="card"><span class="k">Long-running</span><h4>งานยาวไม่สะดุด</h4><p>ทำงานต่อเนื่องได้นานโดยไม่ติด timeout หรือ context limit แบบการแชท</p></div>
+      <div class="card"><span class="k">Browser</span><h4>ใช้เว็บแทนเรา</h4><p>เปิด Chrome คลิก พิมพ์ นำทาง และทำงานบนเว็บให้จบ</p></div>
+    </div>
+
+    <div class="note reveal">
+      <b>แก้งานตรงจุดได้ —</b> ไฮไลต์ส่วนของเอกสารที่อยากแก้แล้วสั่ง Claude ได้เลย ไม่ต้องเสียเวลาบรรยายว่าหมายถึงย่อหน้าไหน · บน desktop Claude อ่านและเขียนไฟล์ในเครื่องได้โดยตรงโดยไม่ต้อง upload / download เอง และ <b>ต้องขออนุญาตอย่างชัดเจนก่อนลบไฟล์ถาวร</b>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener"><span>Get started with Claude Cowork</span></a>
+      <a href="https://support.claude.com/en/articles/14729249-use-live-artifacts-in-claude-cowork" target="_blank" rel="noopener"><span>Use live artifacts in Claude Cowork</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 17 -->
+<section class="slide" id="s17" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Cowork architecture">
+  <div class="inner">
+    <div class="eyebrow reveal">Architecture</div>
+    <h2 class="title wide reveal">Cloud session กับ local session ต่างกันตรงไหน</h2>
+
+    <div class="figure reveal">
+      <svg viewBox="0 0 900 300" role="img" aria-label="แผนภาพเปรียบเทียบ cloud session และ local session ของ Cowork">
+        <text class="svg-s" x="30" y="26">CLOUD SESSION — ค่าเริ่มต้น</text>
+        <rect class="svg-node-a" x="30" y="40" width="380" height="90" rx="14"/>
+        <text class="svg-t" x="50" y="70">Sandbox บนเซิร์ฟเวอร์ Anthropic</text>
+        <text class="svg-s" x="50" y="92">สร้างใหม่ตอนเริ่ม · ทำลายทิ้งตอนจบ</text>
+        <text class="svg-s" x="50" y="112">ไม่แชร์ state ข้าม session หรือข้ามองค์กร</text>
+
+        <rect class="svg-node" x="30" y="150" width="180" height="66" rx="12"/>
+        <text class="svg-t" x="48" y="177" style="font-size:12px">Mandatory proxy</text>
+        <text class="svg-s" x="48" y="196">allow-list เท่านั้น</text>
+
+        <rect class="svg-node" x="230" y="150" width="180" height="66" rx="12"/>
+        <text class="svg-t" x="248" y="177" style="font-size:12px">Claude Desktop</text>
+        <text class="svg-s" x="248" y="196">สะพานไปไฟล์ในเครื่อง</text>
+
+        <path class="svg-l-a" d="M120 130 V150"/>
+        <path class="svg-l-a" d="M320 130 V150"/>
+
+        <line x1="450" y1="20" x2="450" y2="280" class="svg-l" stroke-dasharray="4 6"/>
+
+        <text class="svg-s" x="490" y="26">LOCAL SESSION — บน Desktop</text>
+        <rect class="svg-node-a" x="490" y="40" width="380" height="90" rx="14"/>
+        <text class="svg-t" x="510" y="70">Agent loop รันบนเครื่องเราเอง</text>
+        <text class="svg-s" x="510" y="92">code execution อยู่ใน isolated VM</text>
+        <text class="svg-s" x="510" y="112">macOS: Apple Virtualization.framework</text>
+
+        <rect class="svg-node" x="490" y="150" width="180" height="66" rx="12"/>
+        <text class="svg-t" x="508" y="177" style="font-size:12px">Windows</text>
+        <text class="svg-s" x="508" y="196">Hyper-V</text>
+
+        <rect class="svg-node" x="690" y="150" width="180" height="66" rx="12"/>
+        <text class="svg-t" x="708" y="177" style="font-size:12px">ไฟล์ในเครื่อง</text>
+        <text class="svg-s" x="708" y="196">เฉพาะ folder ที่เชื่อมไว้</text>
+
+        <path class="svg-l-a" d="M580 130 V150"/>
+        <path class="svg-l-a" d="M780 130 V150"/>
+
+        <rect class="svg-node" x="30" y="242" width="840" height="46" rx="12"/>
+        <text class="svg-t" x="50" y="270" style="font-size:12px">Connector tokens ไม่เข้าไปใน sandbox — การเรียก connector เกิดฝั่งเซิร์ฟเวอร์ · credentials อายุสั้นระดับชั่วโมง</text>
+      </svg>
+    </div>
+
+    <div class="note reveal">
+      <b>Network &amp; data —</b> sandbox บน cloud เข้าถึง private, internal, link-local และ cloud-metadata addresses <b>ไม่ได้</b> และเข้าถึงระบบภายในของ Anthropic ไม่ได้ · ข้อมูลที่เก็บถูก scope ไว้กับองค์กรและบัญชีของผู้ใช้ และ<b>ไม่ถูกนำไปเทรนโมเดล</b> ตามข้อผูกพันเชิงพาณิชย์เดียวกับข้อมูล Team และ Enterprise
+    </div>
+
+    <div class="note reveal">
+      <b>สิ่งที่ admin ควบคุมได้ —</b> ปิด cloud sessions โดยยังให้ใช้ local Cowork ได้ · กำหนดนโยบาย network access · คุมสิทธิ์ “always allow” แบบถาวร · บังคับให้เครื่องต้องลงทะเบียน (enroll) และต้องเพิ่งลงชื่อเข้าใช้มาไม่นาน
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview" target="_blank" rel="noopener"><span>Claude Cowork architecture overview</span></a>
+      <a href="https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry" target="_blank" rel="noopener"><span>Monitor Cowork activity with OpenTelemetry</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 18 -->
+<section class="slide" id="s18" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Permission modes">
+  <div class="inner">
+    <div class="eyebrow reveal">Control</div>
+    <h2 class="title wide reveal">Permission modes — เลือกระดับการกำกับดูแล</h2>
+    <p class="lead reveal">ยิ่งให้อิสระมาก งานยิ่งลื่น แต่ความเสี่ยงก็สูงขึ้น เลือกให้เหมาะกับความอ่อนไหวของงาน</p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <span class="k">ปลอดภัยที่สุด</span>
+        <h4>Manually approve</h4>
+        <p>Claude จะหยุดเพื่อขออนุมัติก่อนทำทุก action · แนะนำเมื่องานเกี่ยวกับไฟล์ที่อ่อนไหว เครื่องมือใหม่ที่ยังไม่คุ้น หรือ action ที่ย้อนกลับยาก</p>
+      </div>
+      <div class="card">
+        <span class="k">สมดุล</span>
+        <h4>Automatically approve</h4>
+        <p>Claude ตัดสินใจเองพร้อมมีการตรวจความปลอดภัยอัตโนมัติ และบล็อกสิ่งที่ประเมินว่าไม่ปลอดภัย · ใช้โควตามากกว่าโหมดอื่น</p>
+      </div>
+      <div class="card">
+        <span class="k">เสี่ยงที่สุด</span>
+        <h4>Skip all approvals</h4>
+        <p>ไม่มีการหยุดถามและไม่มีการตรวจระหว่างทาง — ใช้เฉพาะเมื่อมั่นใจในขอบเขตงานจริง ๆ</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      Auto mode มีผลกับ <b>connectors, plugins, Claude in Chrome ทั้งหมดที่มีอยู่</b> และ Cowork actions บางอย่าง เช่นการดึงข้อมูลจากเว็บไซต์ · โหมด Automatically approve เปิดใช้บนแผน Pro และ Max
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener"><span>Get started with Claude Cowork</span></a>
+      <a href="https://support.claude.com/en/articles/13364135-use-claude-cowork-safely" target="_blank" rel="noopener"><span>Use Claude Cowork safely</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 19 -->
+<section class="slide" id="s19" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Scheduled tasks">
+  <div class="inner">
+    <div class="eyebrow reveal">Automation</div>
+    <h2 class="title reveal">Scheduled tasks — ตั้งเวลาให้งานเดินเอง</h2>
+
+    <div class="grid g23 reveal">
+      <div>
+        <p class="lead" style="margin-top:0">ตั้งได้สองวิธี: ให้ <b>Claude ช่วยตั้ง</b> โดย Claude จะถามเป็นตัวเลือกให้เราเลือกตอบจนได้ task ที่สมบูรณ์ หรือ <b>ตั้งเอง</b> โดยกรอกชื่อ task, prompt, approval mode, ความถี่ และเลือก model กับ folder เพิ่มเติมได้</p>
+        <div class="chips">
+          <span class="chip on">Hourly</span><span class="chip on">Daily</span><span class="chip on">Weekly</span>
+          <span class="chip on">Weekdays</span><span class="chip on">Manual</span>
+        </div>
+        <ul class="ticks">
+          <li><b>รันแบบ remote</b> — ทำงานตามรอบแม้คอมพิวเตอร์จะ sleep อยู่หรือปิดแอปไปแล้ว</li>
+          <li><b>ยกเว้นงานที่ต้องใช้ของในเครื่อง</b> — ถ้า task ต้องใช้ไฟล์หรือแอปในเครื่อง จะรันเฉพาะแบบ local เท่านั้น</li>
+          <li><b>ความสามารถเท่างาน Cowork ปกติ</b> — ใช้ connected tools, skills และ plugins ที่ติดตั้งไว้ได้เหมือน Cowork task ทั่วไป</li>
+        </ul>
+      </div>
+      <div class="card plain flat">
+        <span class="k">แผนที่ใช้ได้</span>
+        <h4>ทุกแผนที่เสียเงิน</h4>
+        <p>Pro, Max, Team และ Enterprise โดยทยอยเปิดให้ใช้เริ่มจากแผน Max</p>
+        <div class="rule" style="margin:16px 0"></div>
+        <span class="k">ข้อควรระวัง</span>
+        <p>หลีกเลี่ยงการตั้ง scheduled task กับงานที่เกี่ยวข้องกับข้อมูลอ่อนไหว เพราะเป็นงานที่รันโดยไม่มีคนดูอยู่ตรงหน้า</p>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank" rel="noopener"><span>Schedule recurring tasks in Claude Cowork</span></a>
+      <a href="https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork" target="_blank" rel="noopener"><span>Assign tasks from anywhere in Claude Cowork</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 20 -->
+<section class="slide" id="s20" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Computer use">
+  <div class="inner">
+    <div class="eyebrow reveal">Research preview</div>
+    <h2 class="title reveal">Computer use — ให้ Claude ใช้หน้าจอเราโดยตรง</h2>
+    <p class="lead reveal">เมื่อไม่มี connector หรือ browser tool ที่ใช้ได้ Claude สามารถคลิก พิมพ์ และเปิดแอปบนหน้าจอเราได้เอง โดยจะไล่ลำดับ <b>connectors → browser → หน้าจอโดยตรง</b></p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">เปิดใช้อย่างไร</span>
+        <ol class="steps" style="margin-top:6px">
+          <li>อัปเดต Claude Desktop เป็นเวอร์ชันล่าสุดจาก claude.com/download</li>
+          <li>ไปที่ <b>Settings &gt; General</b> ในส่วนของ Desktop app</li>
+          <li>เปิดสวิตช์ <b>Computer use</b></li>
+          <li>เริ่ม session ของ Cowork หรือ Claude Code</li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="k">ข้อกำหนด &amp; ข้อจำกัด</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li><b>OS</b> — macOS และ Windows ผ่าน Claude Desktop</li>
+          <li><b>แผน</b> — Pro และ Max เท่านั้น (ยังไม่รองรับ Team / Enterprise)</li>
+          <li><b>ฮาร์ดแวร์</b> — เครื่องต้องเปิดอยู่ ไม่เข้าโหมด sleep และเปิดแอป Claude Desktop ค้างไว้</li>
+          <li>ช้ากว่าการใช้ connector โดยตรง และ workflow ซับซ้อนอาจต้องลองใหม่หลายรอบ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note warn reveal">
+      <b>ข้อควรระวังสำคัญ —</b> Claude ใช้การ <b>ถ่าย screenshot</b> เพื่อนำทาง จึงเห็นทุกอย่างที่ปรากฏบนหน้าจอ · อย่าใช้ computer use กับข้อมูลอ่อนไหว เช่น ธนาคาร ข้อมูลสุขภาพ เอกสารกฎหมาย หรือข้อมูลส่วนบุคคล · Claude จะขออนุญาตก่อนเข้าถึงแต่ละแอป และแอปกลุ่มการลงทุนกับ cryptocurrency ถูก block ไว้เป็นค่าเริ่มต้น (เพิ่มแอปอื่นเข้า blocklist เองได้)
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork" target="_blank" rel="noopener"><span>Let Claude use your computer in Cowork</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 21 -->
+<section class="slide" id="s21" data-chapter="2" data-group="02 · Claude Cowork" data-nav="Projects ใน Cowork">
+  <div class="inner">
+    <div class="eyebrow reveal">Organize</div>
+    <h2 class="title wide reveal">Projects ใน Cowork ต่างจาก Projects ในแชท</h2>
+    <p class="lead reveal">Cowork projects คือ workspace เฉพาะที่มีไฟล์, บริบท, instructions และ memory ของตัวเอง — เก็บไว้ในเครื่องแบบ local ไม่ใช่บน cloud</p>
+
+    <div class="tblwrap reveal">
+      <table>
+        <thead><tr><th style="width:22%">ประเด็น</th><th>Cowork projects</th><th>Chat projects</th></tr></thead>
+        <tbody>
+          <tr><td><b>ที่เก็บ</b></td><td>เฉพาะบน desktop เก็บแบบ local</td><td>อยู่บน cloud</td></tr>
+          <tr><td><b>ขอบเขต</b></td><td>ใช้คนเดียว</td><td>แชร์ได้บนแผน Team และ Enterprise</td></tr>
+          <tr><td><b>Sync ข้อมูล</b></td><td>ไม่มี cloud sync</td><td>sync ข้ามอุปกรณ์</td></tr>
+          <tr><td><b>Memory</b></td><td>จำกัดอยู่ในขอบเขตของ project นั้น</td><td>เข้าถึงได้ระดับบัญชี</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid g4 reveal">
+      <div class="card"><span class="k">มีอะไรข้างใน</span><h4>Instructions</h4><p>กำหนดแนวทางให้ Claude ใช้กับทุก task ใน project</p></div>
+      <div class="card"><span class="k">มีอะไรข้างใน</span><h4>Scheduled tasks</h4><p>งานประจำที่ผูกกับ project นั้นโดยเฉพาะ</p></div>
+      <div class="card"><span class="k">มีอะไรข้างใน</span><h4>Context</h4><p>ผูก local folders, chat project หรือ URL เข้ามาเป็นบริบท</p></div>
+      <div class="card"><span class="k">มีอะไรข้างใน</span><h4>Memory</h4><p>Claude จำสิ่งที่เรียนรู้และนำมาใช้ต่อภายใน project</p></div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork" target="_blank" rel="noopener"><span>Organize your tasks with projects in Claude Cowork</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 22 -->
+<section class="slide" id="s22" data-chapter="2" data-group="02 · Claude Cowork" data-nav="ใช้ Cowork อย่างปลอดภัย">
+  <div class="inner">
+    <div class="eyebrow reveal">Safety</div>
+    <h2 class="title reveal">ใช้ Cowork อย่างปลอดภัย</h2>
+    <p class="lead reveal">ความเสี่ยงของ agentic tool มาจากสองมิติคือ <b>Claude อ่านอะไรได้</b> และ <b>Claude ทำอะไรได้</b> — ภัยหลักคือ <b>prompt injection</b> คือคำสั่งอันตรายที่ฝังอยู่ในเนื้อหาภายนอกแล้วหลอกให้ Claude ทำตาม</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">ชั้นป้องกันที่มีอยู่</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li>เทรนโมเดลให้ต้านคำสั่งที่เป็นอันตราย</li>
+          <li>Classifiers คอยจับเนื้อหาที่น่าจะเป็น injection</li>
+          <li>การลบไฟล์ต้องได้รับอนุญาตอย่างชัดเจน</li>
+          <li>Computer use มีการตรวจสิทธิ์แยกรายแอป</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">แนวปฏิบัติที่แนะนำ</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li>จำกัดสิทธิ์เข้าถึงไฟล์ไว้ที่ folder งานที่ไม่อ่อนไหว</li>
+          <li>ดูภาพรวมรูปแบบของงานมากกว่าไล่ตรวจทีละคำสั่ง</li>
+          <li>เลี่ยงการตั้ง scheduled task กับข้อมูลอ่อนไหว</li>
+          <li>จำกัด browser ให้เข้าเฉพาะเว็บที่ไว้ใจได้</li>
+          <li>ตรวจสอบ MCP และ plugin ให้ดีก่อนติดตั้ง</li>
+          <li>แจ้งทันทีเมื่อเห็นพฤติกรรมผิดปกติ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note warn reveal">
+      <b>Sandbox ไม่ได้กันทุกอย่าง —</b> การรันแบบ isolated บนเซิร์ฟเวอร์ Anthropic จำกัดแค่ <b>ว่าโค้ดถูกรันที่ไหน</b> ไม่ได้จำกัดว่า Claude อ่านหรือทำอะไรได้ · cloud session ยังเข้าถึงไฟล์ อีเมล และ browser ของเราผ่าน Desktop app ได้อยู่ · <b>ผู้ใช้ยังคงรับผิดชอบเต็มที่ต่อทุก action ที่ Claude ทำแทน</b>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13364135-use-claude-cowork-safely" target="_blank" rel="noopener"><span>Use Claude Cowork safely</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 03 · CLAUDE CODE ══════════════ -->
+<section class="slide chapter" id="s23" data-chapter="3" data-group="03 · Claude Code" data-nav="เปิดบท Claude Code">
+  <div class="inner">
+    <div class="no reveal">03</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Three</div>
+      <h2 class="reveal">Claude Code</h2>
+      <p class="lead reveal">เครื่องมือเขียนโค้ดที่พา Claude เข้ามาอยู่ใน terminal และ IDE ของเราโดยตรง มอบงานยาก ๆ ให้ทำได้โดยยังเห็นทุกขั้นตอนและควบคุมได้ตลอด</p>
+      <div class="agenda reveal">
+        <span>Claude Code คืออะไร</span><span>แผนและการเข้าถึง</span><span>Model configuration</span>
+        <span>Claude Code on the web</span><span>Security review</span><span>Code Review</span><span>Analytics</span><span>FAQ</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/14445694-claude-code" target="_blank" rel="noopener"><span>Collection: Claude Code</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 24 -->
+<section class="slide" id="s24" data-chapter="3" data-group="03 · Claude Code" data-nav="Claude Code คืออะไร">
+  <div class="inner">
+    <div class="eyebrow reveal">พื้นฐาน</div>
+    <h2 class="title reveal">Claude ที่อยู่ใน terminal และ IDE ของเรา</h2>
+    <p class="lead reveal">Claude Code ให้เราเข้าถึงโมเดล Claude ได้จาก terminal หรือ IDE ที่รองรับ เพื่อมอบหมายงานเขียนโค้ดที่ซับซ้อน โดยยังคง <b>ความโปร่งใสและการควบคุม</b> ไว้ในมือเรา</p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <span class="k">ติดตั้ง</span>
+        <h4>เริ่มจากเอกสารทางการ</h4>
+        <p>ดาวน์โหลดตัวติดตั้งให้ตรงกับระบบปฏิบัติการที่ใช้ ได้จาก <b>code.claude.com/docs</b></p>
+      </div>
+      <div class="card">
+        <span class="k">ล็อกอิน</span>
+        <h4>ใช้บัญชี Claude เดิม</h4>
+        <p>ยืนยันตัวตนด้วย credentials เดียวกับที่ใช้บน claude.ai · ถ้าเคยใช้ API ผ่าน Console อยู่ ให้พิมพ์ <code>/login</code> ใน Claude Code เพื่อสลับ</p>
+      </div>
+      <div class="card">
+        <span class="k">IDE ที่รองรับ</span>
+        <h4>VS Code &amp; JetBrains</h4>
+        <p>VS Code, Cursor, VS Code forks อื่น ๆ และ JetBrains IDEs เช่น IntelliJ กับ PyCharm · <b>ไม่รองรับ</b> Microsoft Visual Studio 2022</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>ไม่มีการ index โค้ดเบส —</b> Claude Code ไม่สร้าง index และไม่ใช้ vector database แต่ใช้เครื่องมือค้นหาและอ่านไฟล์ตามที่ต้องการในขณะนั้น · สิทธิ์การทำงานถูกกำหนดผ่าน <code>.claude/settings.json</code> ด้วย allow / deny list แบบ pattern matching และค่อย ๆ สะสมได้จากการตอบ “Yes, and don't ask again”
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan" target="_blank" rel="noopener"><span>Use Claude Code with your Pro or Max plan</span></a>
+      <a href="https://support.claude.com/en/articles/12386420-claude-code-faq" target="_blank" rel="noopener"><span>Claude Code FAQ</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 25 -->
+<section class="slide" id="s25" data-chapter="3" data-group="03 · Claude Code" data-nav="แผนและการเข้าถึง">
+  <div class="inner">
+    <div class="eyebrow reveal">Plans &amp; seats</div>
+    <h2 class="title wide reveal">ใครใช้ Claude Code ได้ และโควตาคิดอย่างไร</h2>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">บุคคล</span>
+        <h4>Pro และ Max</h4>
+        <ul class="ticks" style="margin-top:8px">
+          <li>ทั้งสองแผนรวม Claude Code มาให้พร้อมกับการใช้ Claude บน web, desktop และ mobile</li>
+          <li><b>ใช้โควตาก้อนเดียวกัน</b> ระหว่าง Claude และ Claude Code</li>
+          <li>ระบบจะเตือนเมื่อโควตาใกล้หมด และเลือกอัปเกรดแผนหรือเปิด API credits เพื่อทำงานต่อได้</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">องค์กร</span>
+        <h4>Team และ Enterprise</h4>
+        <ul class="ticks" style="margin-top:8px">
+          <li><b>Team</b> — รวม Claude Code มาให้ในทุก seat โดยอัตโนมัติ</li>
+          <li><b>Enterprise ใหม่ / self-serve</b> — รวมมาให้ในทุก seat โดยไม่มีค่าใช้จ่ายเพิ่ม</li>
+          <li><b>Enterprise แบบเดิม</b> — ใช้ผ่าน seat แบบ “Chat + Claude Code” (usage-based) หรือ Premium seats (seat-based)</li>
+          <li><b>Premium seats</b> ให้โควตามากขึ้นสำหรับคนที่งานหนัก ซื้อหรือย้ายสิทธิ์ได้ที่ Organization settings</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>เมื่อโควตาหมด —</b> Enterprise แบบ usage-based ไม่มีเพดานการใช้งานรายที่นั่ง คิดตามการใช้จริงในอัตรา API · ส่วน Team และ Enterprise แบบ seat-based สามารถเปิด <b>usage credits</b> ให้สมาชิกทำงานต่อได้หลังใช้โควตารายเดือนหมด · การใช้ Claude Code ใน IDE คิดเงินแบบเดียวกับการใช้ผ่าน terminal
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan" target="_blank" rel="noopener"><span>Use Claude Code with your Pro or Max plan</span></a>
+      <a href="https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan" target="_blank" rel="noopener"><span>Use Claude Code with your Team or Enterprise plan</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 26 -->
+<section class="slide" id="s26" data-chapter="3" data-group="03 · Claude Code" data-nav="Model configuration">
+  <div class="inner">
+    <div class="eyebrow reveal">Configuration</div>
+    <h2 class="title reveal">เลือกและตั้งค่าโมเดลใน Claude Code</h2>
+
+    <div class="grid g23 reveal">
+      <div>
+        <ol class="steps">
+          <li><b>เปลี่ยนเร็วที่สุด</b> — พิมพ์ <code>/model</code> แล้วเลือกจากเมนู การเปลี่ยนมีผลทันที</li>
+          <li><b>เฉพาะ session นี้</b> — ใส่ flag ตอนเปิดโปรแกรม เช่น <code>claude --model claude-opus-5</code></li>
+          <li><b>ตั้งเป็นค่าเริ่มต้นถาวร</b> — เพิ่ม <code>export ANTHROPIC_MODEL="…"</code> ลงในไฟล์ shell config (<code>~/.zshrc</code> บน macOS หรือ <code>~/.bashrc</code> บน Linux) แล้ว <code>source</code> ใหม่และรีสตาร์ต Terminal</li>
+          <li><b>ตรวจสถานะ</b> — พิมพ์ <code>/status</code> เพื่อดูว่าตอนนี้ใช้โมเดลอะไรอยู่</li>
+        </ol>
+        <div class="codeblock reveal">
+<span class="c"># เปลี่ยนโมเดลจากในโปรแกรม</span>
+<span class="p">&gt;</span> /model
+<span class="c"># เปิดโปรแกรมด้วยโมเดลที่ต้องการ</span>
+<span class="p">$</span> claude --model claude-opus-5
+<span class="c"># ตั้งค่าเริ่มต้นถาวร</span>
+<span class="p">$</span> export ANTHROPIC_MODEL="claude-sonnet-5"
+        </div>
+      </div>
+      <div class="card plain flat">
+        <span class="k">โมเดลที่เลือกได้</span>
+        <h4>รุ่นล่าสุด</h4>
+        <div class="chips" style="margin-top:8px">
+          <span class="chip on">Opus 5</span><span class="chip on">Sonnet 5</span><span class="chip on">Fable 5</span>
+        </div>
+        <div class="rule" style="margin:16px 0"></div>
+        <h4>รุ่นก่อนหน้าที่ยังเลือกได้</h4>
+        <div class="chips" style="margin-top:8px">
+          <span class="chip">Opus 4.8</span><span class="chip">Opus 4.7</span><span class="chip">Opus 4.6</span>
+          <span class="chip">Opus 4.5</span><span class="chip">Sonnet 4.6</span><span class="chip">Sonnet 4.5</span>
+          <span class="chip">Haiku 4.5</span>
+        </div>
+        <p style="margin-top:14px">การสลับจาก Opus ไปใช้ Sonnet เป็นวิธีลดค่าใช้จ่ายที่เอกสารแนะนำไว้ใน FAQ</p>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11940350-claude-code-model-configuration" target="_blank" rel="noopener"><span>Claude Code model configuration</span></a>
+      <a href="https://support.claude.com/en/articles/12304248-manage-api-key-environment-variables-in-claude-code" target="_blank" rel="noopener"><span>Manage API key environment variables</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 27 -->
+<section class="slide" id="s27" data-chapter="3" data-group="03 · Claude Code" data-nav="Claude Code on the web">
+  <div class="inner">
+    <div class="eyebrow reveal">Async</div>
+    <h2 class="title reveal">Claude Code on the web — มอบงานแล้วปล่อยให้รันเอง</h2>
+    <p class="lead reveal">มอบหมายงานให้ Claude ผ่าน browser แล้วปล่อยให้ทำงานโดยไม่ต้องนั่งเฝ้า และทำงานกับ repository บน GitHub ได้แม้ไม่ได้ clone ไว้ในเครื่อง</p>
+
+    <div class="grid g4 reveal">
+      <div class="card"><span class="k">Step 01</span><h4>เลือก repository</h4><p>เลือก repo บน GitHub แล้วอธิบายงานที่ต้องการ</p></div>
+      <div class="card"><span class="k">Step 02</span><h4>รันใน VM แยกของตัวเอง</h4><p>ระบบสร้าง virtual machine แยกให้แต่ละงาน แล้ว clone repo ลงในสภาพแวดล้อมที่เตรียมเครื่องมือ dev ไว้แล้ว</p></div>
+      <div class="card"><span class="k">Step 03</span><h4>Claude ลงมือทำ</h4><p>อ่านโค้ด แก้ไข รัน tests แล้ว push ผลลัพธ์ขึ้น branch ใหม่</p></div>
+      <div class="card"><span class="k">Step 04</span><h4>เปิด pull request</h4><p>สร้าง PR ให้อัตโนมัติเพื่อให้เรารีวิว</p></div>
+    </div>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">ความปลอดภัย</span>
+        <h4>Sandbox แยกเต็มรูปแบบ</h4>
+        <p>แต่ละงานรันแยกกันโดยสมบูรณ์ มีการจำกัด network access และจัดการ credential อย่างปลอดภัย · การยืนยันตัวตนกับ GitHub ผ่าน secure proxy ทำให้ <b>credentials ไม่เคยอยู่ในสภาพแวดล้อมที่ทำงานจริง</b></p>
+      </div>
+      <div class="card">
+        <span class="k">สลับกลับมาคุมเอง</span>
+        <h4>Open in CLI</h4>
+        <p>ถ้าระหว่างทางรู้สึกว่าต้องเข้าไปกำกับเอง เลือก <b>Open in CLI</b> เพื่อย้ายจาก workflow บนเว็บมาทำต่อใน terminal ได้</p>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12618689-claude-code-on-the-web" target="_blank" rel="noopener"><span>Claude Code on the web</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 28 -->
+<section class="slide" id="s28" data-chapter="3" data-group="03 · Claude Code" data-nav="Security &amp; Code Review">
+  <div class="inner">
+    <div class="eyebrow reveal">Quality gates</div>
+    <h2 class="title wide reveal">Automated security reviews และ Code Review</h2>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">Pro · Max · API pay-as-you-go</span>
+        <h4>/security-review</h4>
+        <p>พิมพ์ <code>/security-review</code> ใน terminal เพื่อวิเคราะห์โค้ดเบสแบบ on-demand ดูประเด็นที่พบ แล้วสั่งให้แก้ต่อได้ทันทีใน workflow เดิม · ตั้งเป็น <b>GitHub Action</b> ให้ทำงานอัตโนมัติเมื่อมี pull request ใหม่ พร้อมคอมเมนต์แบบ inline บน PR ก็ได้</p>
+        <div class="chips" style="margin-top:12px">
+          <span class="chip">SQL injection</span><span class="chip">Cross-site scripting (XSS)</span>
+          <span class="chip">Authentication flaws</span><span class="chip">Insecure data handling</span>
+          <span class="chip">Dependency vulnerabilities</span>
+        </div>
+      </div>
+      <div class="card">
+        <span class="k">Team · Enterprise · research preview</span>
+        <h4>Code Review</h4>
+        <p>กลุ่ม agent เฉพาะทางตรวจการเปลี่ยนแปลงของโค้ดโดยดูบริบทของทั้งโค้ดเบส เพื่อหา logic errors, security vulnerabilities, edge case ที่ทำงานผิด และ regressions แล้วคอมเมนต์แบบ inline บน PR</p>
+        <ul class="ticks" style="margin-top:10px">
+          <li><b>ติดตั้ง</b> — owner ขององค์กรติดตั้ง Claude GitHub App ให้สิทธิ์อ่าน/เขียน contents และ pull requests แล้วเลือก repo ที่จะเปิดใช้</li>
+          <li><b>ทริกเกอร์</b> — ครั้งเดียวตอนเปิด PR / ทุกครั้งที่ push (แพงสุด) / เรียกเองด้วยคอมเมนต์ <code>@claude review</code></li>
+          <li><b>ปรับแต่ง</b> — เพิ่มไฟล์ <code>CLAUDE.md</code> และ <code>REVIEW.md</code> ใน repo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>ตัวเลขที่ควรรู้ของ Code Review —</b> ใช้เวลารีวิวเฉลี่ยภายใน <b>20 นาที</b> · ค่าใช้จ่ายเฉลี่ย <b>$15–25 ต่อการรีวิวหนึ่งครั้ง</b> แปรตามความซับซ้อนของ PR · คิดเงินแยกผ่าน credits และ <b>ไม่นับรวมใน usage limit ของแผน</b> · องค์กรต้องเปิด data retention ไว้
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code" target="_blank" rel="noopener"><span>Automated Security Reviews in Claude Code</span></a>
+      <a href="https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code" target="_blank" rel="noopener"><span>Set up Code Review for Claude Code</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 29 -->
+<section class="slide" id="s29" data-chapter="3" data-group="03 · Claude Code" data-nav="Usage analytics">
+  <div class="inner">
+    <div class="eyebrow reveal">Measure</div>
+    <h2 class="title reveal">Claude Code usage analytics</h2>
+    <p class="lead reveal">แดชบอร์ดสำหรับองค์กรที่อยากรู้ว่า Claude Code ถูกใช้จริงแค่ไหนและสร้างผลลัพธ์อะไรบ้าง</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">Usage tab</span>
+        <h4>ใช้งานจริงเท่าไร</h4>
+        <ul class="ticks" style="margin-top:6px">
+          <li>Lines of code accepted และอัตราการยอมรับโค้ดที่ Claude เสนอ</li>
+          <li>แนวโน้มการใช้งานรายวันและจำนวน user sessions</li>
+          <li>Top commands ที่ใช้กันทั้งองค์กร</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">Value tab</span>
+        <h4>ได้อะไรกลับมา</h4>
+        <ul class="ticks" style="margin-top:6px">
+          <li>ประมาณการ productivity ที่เพิ่มขึ้น</li>
+          <li>ต้นทุนต่อ commit</li>
+          <li>มูลค่าที่ประเมินเป็นรายปี</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>ใครดูได้ —</b> แผน Team: Owners และ Primary Owners · แผน Enterprise: Owners, Primary Owners และ Admins ที่มี seat ประเภทที่เหมาะสม · API Console: role Admin, Billing และ Developer · <b>ผู้ใช้ Pro / Max รายบุคคลยังดูแดชบอร์ดนี้ไม่ได้</b> · ข้อมูลรีเฟรชรายวันและรีเซ็ตรายเดือน · ส่วน Contribution metrics (beta) ต้องต่อ GitHub integration ก่อน
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12157520-claude-code-usage-analytics" target="_blank" rel="noopener"><span>Claude Code usage analytics</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 30 -->
+<section class="slide" id="s30" data-chapter="3" data-group="03 · Claude Code" data-nav="Claude Code FAQ">
+  <div class="inner">
+    <div class="eyebrow reveal">FAQ</div>
+    <h2 class="title wide reveal">คำถามที่เจอบ่อยเรื่อง Claude Code</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">Permissions</span><h4>คุมสิทธิ์ยังไง</h4><p>ตั้งค่าใน <code>.claude/settings.json</code> ด้วย allow / deny list แบบ pattern matching · การใช้ wildcard ต้องระวังเป็นพิเศษ ควรค่อย ๆ สร้าง permission ขึ้นมาจากการตอบ “Yes, and don't ask again”</p></div>
+      <div class="card"><span class="k">Cost</span><h4>ลดค่าใช้จ่ายยังไง</h4><p>สลับจาก Opus ไป Sonnet · ติดตามค่าใช้จ่ายผ่าน console dashboard และตั้ง rate limits · ใช้ Workspaces เพื่อกำหนดเพดานค่าใช้จ่ายแยกตามกลุ่มผู้ใช้</p></div>
+      <div class="card"><span class="k">Data</span><h4>ข้อมูลไปไหน</h4><p>เมื่อตั้งค่ากับ Bedrock / Vertex และเปิด <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</code> จะส่งเฉพาะ telemetry ที่จำเป็น และ model API requests ทั้งหมดวิ่งตรงไปยัง endpoint ของเราเอง</p></div>
+      <div class="card"><span class="k">Integrations</span><h4>ต่อกับอะไรได้บ้าง</h4><p>เชื่อมกับ MCP servers ได้ · มี GitHub Actions integration และรองรับ GitLab CI/CD · รองรับ corporate proxy ที่คง compatibility กับ Anthropic API spec</p></div>
+      <div class="card"><span class="k">Subagents</span><h4>แบ่งงานย่อย</h4><p>Subagents ที่ใช้ผ่าน SDK ตั้งค่าให้ใช้ MCP tools เฉพาะตัวได้ผ่าน field <code>tools</code></p></div>
+      <div class="card"><span class="k">Enterprise</span><h4>Dynamic workflows</h4><p>เฉพาะแผน Enterprise — รองรับงานขนาดใหญ่อย่างการทำ migration หรือ audit ให้จบได้ใน session เดียว</p></div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12386420-claude-code-faq" target="_blank" rel="noopener"><span>Claude Code FAQ</span></a>
+      <a href="https://support.claude.com/en/articles/15924927-use-claude-code-cli-with-a-screen-reader" target="_blank" rel="noopener"><span>Use Claude Code CLI with a screen reader</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 04 · CLAUDE DESKTOP ══════════════ -->
+<section class="slide chapter" id="s31" data-chapter="4" data-group="04 · Claude Desktop" data-nav="เปิดบท Desktop">
+  <div class="inner">
+    <div class="no reveal">04</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Four</div>
+      <h2 class="reveal">Claude Desktop</h2>
+      <p class="lead reveal">แอป native ที่ปลดล็อกสิ่งที่ browser ทำไม่ได้ — เข้าถึงไฟล์ในเครื่อง เชื่อม local MCP servers และเป็นสะพานให้ Cowork เข้าถึงทรัพยากรบนเครื่องเรา</p>
+      <div class="agenda reveal">
+        <span>ติดตั้ง &amp; ข้อกำหนด OS</span><span>Quick Entry</span><span>Desktop extensions</span><span>Local MCP servers</span><span>Enterprise deployment</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/16163169-claude-desktop" target="_blank" rel="noopener"><span>Collection: Claude Desktop</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 32 -->
+<section class="slide" id="s32" data-chapter="4" data-group="04 · Claude Desktop" data-nav="ติดตั้ง Desktop">
+  <div class="inner">
+    <div class="eyebrow reveal">Install</div>
+    <h2 class="title wide reveal">ติดตั้ง Claude Desktop และข้อกำหนดของระบบ</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">macOS</span><h4>เวอร์ชัน 11 (Big Sur) ขึ้นไป</h4><p>ดาวน์โหลด installer เปิดไฟล์ แล้วเปิดแอปจาก Applications · อัปเดตอัตโนมัติ</p></div>
+      <div class="card"><span class="k">Windows</span><h4>เวอร์ชัน 10 ขึ้นไป</h4><p>ดาวน์โหลด installer เปิดไฟล์ แล้วเปิดแอปจาก Start menu · อัปเดตอัตโนมัติ</p></div>
+      <div class="card"><span class="k">Linux · beta</span><h4>Ubuntu 22.04 LTS+ / Debian 12</h4><p>รองรับ x64 และ arm64 · แนะนำให้ติดตั้งผ่าน apt repository เพื่อให้ได้อัปเดตอัตโนมัติ</p></div>
+    </div>
+
+    <div class="codeblock reveal">
+<span class="c"># Linux — ติดตั้งผ่าน apt repository (แนะนำ)</span>
+<span class="p">$</span> sudo curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
+<span class="p">$</span> echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
+<span class="p">$</span> sudo apt update &amp;&amp; sudo apt install claude-desktop
+<span class="c"># อัปเดตภายหลัง</span>
+<span class="p">$</span> sudo apt update &amp;&amp; sudo apt upgrade
+    </div>
+
+    <div class="note reveal">
+      <b>ดาวน์โหลดที่ —</b> <code>https://claude.ai/download</code> · ฟีเจอร์ที่มีเฉพาะบน desktop ได้แก่ <b>desktop extensions</b> (ต่อ Claude เข้ากับแอป ไฟล์ ปฏิทิน และแอปแชทในเครื่อง), <b>Claude Cowork</b> แบบเต็มรูปแบบ และ <b>Quick Entry</b>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/10065433-install-claude-desktop" target="_blank" rel="noopener"><span>Install Claude Desktop</span></a>
+      <a href="https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos" target="_blank" rel="noopener"><span>Deploy Claude Desktop for macOS</span></a>
+      <a href="https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows" target="_blank" rel="noopener"><span>Deploy Claude Desktop for Windows</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 33 -->
+<section class="slide" id="s33" data-chapter="4" data-group="04 · Claude Desktop" data-nav="Quick Entry">
+  <div class="inner">
+    <div class="eyebrow reveal">macOS</div>
+    <h2 class="title reveal">Quick Entry — เรียก Claude จากที่ไหนก็ได้</h2>
+    <p class="lead reveal">เข้าถึง Claude ได้ทันทีจากทุกที่บนเครื่อง โดยไม่ต้องหยุดงานที่ทำอยู่</p>
+
+    <div class="grid g23 reveal">
+      <div>
+        <div class="grid g3" style="margin-top:0">
+          <div class="card stat"><div class="v"><kbd>⌥</kbd> ×2</div><div class="l">แตะปุ่ม Option สองครั้งเพื่อเรียก Quick Entry</div></div>
+          <div class="card stat"><div class="v">macOS 12+</div><div class="l">สำหรับฟีเจอร์พื้นฐาน</div></div>
+          <div class="card stat"><div class="v">macOS 14+</div><div class="l">สำหรับ voice dictation</div></div>
+        </div>
+        <ul class="ticks">
+          <li><b>ทำอะไรได้บ้าง</b> — เริ่มแชทใหม่ จับภาพหน้าจอ แชร์หน้าต่างของแอป และใช้ voice dictation</li>
+          <li><b>ปรับ shortcut ได้</b> — เปลี่ยนเป็น <kbd>⌥</kbd> + <kbd>Space</kbd> หรือกำหนดคีย์เอง</li>
+          <li><b>Dictation</b> — ใช้ <kbd>Caps Lock</kbd> เป็นค่าเริ่มต้น ปิดหรือเปลี่ยนได้</li>
+          <li><b>ต้องเปิดแอปค้างไว้</b> — Claude Desktop ทำงานอยู่เบื้องหลังก็พอ</li>
+        </ul>
+      </div>
+      <div class="card plain flat">
+        <span class="k">สามอย่างที่ Quick Entry ทำได้ดี</span>
+        <h4>1 · เปิด Claude ทันที</h4>
+        <p>ไม่ต้องสลับหน้าต่างหรือหาแอป</p>
+        <div class="rule" style="margin:14px 0"></div>
+        <h4>2 · ส่งบริบทที่มองเห็น</h4>
+        <p>จับ screenshot หรือแชร์หน้าต่างแอปเข้าไปในคำถามได้เลย</p>
+        <div class="rule" style="margin:14px 0"></div>
+        <h4>3 · พิมพ์ด้วยเสียง</h4>
+        <p>Voice input แบบไม่ต้องใช้มือ พร้อม transcription แบบเรียลไทม์</p>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac" target="_blank" rel="noopener"><span>Use quick entry with Claude Desktop on Mac</span></a>
+      <a href="https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link" target="_blank" rel="noopener"><span>Open Claude Desktop with a link</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 34 -->
+<section class="slide" id="s34" data-chapter="4" data-group="04 · Claude Desktop" data-nav="Desktop extensions">
+  <div class="inner">
+    <div class="eyebrow reveal">Extensions</div>
+    <h2 class="title wide reveal">Desktop extensions และ local MCP servers</h2>
+    <p class="lead reveal">Desktop extensions คือแพ็กเกจติดตั้งคลิกเดียวสำหรับ local MCP servers — แทนที่การแก้ไฟล์ JSON และจัดการ dependency ด้วยมือ ติดตั้งง่ายพอ ๆ กับ browser extension</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">วิธีที่แนะนำ</span>
+        <h4>ติดตั้งจาก directory</h4>
+        <ol class="steps" style="margin-top:6px">
+          <li>ไปที่ <b>Settings &gt; Extensions</b></li>
+          <li>เลือกจาก directory ที่มีให้</li>
+          <li>กด <b>Install</b> จบในคลิกเดียว</li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="k">สำหรับ server ที่ทำเอง</span>
+        <h4>ติดตั้งแบบ manual</h4>
+        <ol class="steps" style="margin-top:6px">
+          <li>แพ็ก MCP server พร้อมไฟล์ <code>manifest.json</code> ด้วยคำสั่ง <code>mcpb pack</code></li>
+          <li>ไปที่ <b>Settings &gt; Extensions &gt; Advanced settings &gt; Extension Developer</b></li>
+          <li>เลือกไฟล์ <code>.mcpb</code> เพื่อติดตั้ง</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>รายละเอียดทางเทคนิค —</b> รองรับ MCP server ที่เขียนด้วย <b>Node.js, Python และแบบ binary</b> · Claude Desktop มี Node.js runtime มาให้ในตัวจึงไม่ต้องติดตั้ง Node เอง · ข้อมูลอ่อนไหวอย่าง API keys ถูกเข้ารหัสด้วยระบบเก็บข้อมูลลับของ OS — Keychain บน macOS, Credential Manager บน Windows และ keychain ต่าง ๆ บน Linux
+    </div>
+
+    <div class="note reveal">
+      <b>สำหรับองค์กร —</b> เปิดใช้ <b>desktop extension allowlist</b> เพื่อจำกัดว่า extension ใดติดตั้งได้บ้าง และมีแนวทาง deploy MCP servers ระดับ enterprise ผ่าน desktop extensions โดยเฉพาะ
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop" target="_blank" rel="noopener"><span>Getting Started with Local MCP Servers on Claude Desktop</span></a>
+      <a href="https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist" target="_blank" rel="noopener"><span>Enabling and using the desktop extension allowlist</span></a>
+      <a href="https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions" target="_blank" rel="noopener"><span>Deploying enterprise-grade MCP servers</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 05 · CLAUDE MOBILE APPS ══════════════ -->
+<section class="slide chapter" id="s35" data-chapter="5" data-group="05 · Claude Mobile apps" data-nav="เปิดบท Mobile">
+  <div class="inner">
+    <div class="no reveal">05</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Five</div>
+      <h2 class="reveal">Claude Mobile apps</h2>
+      <p class="lead reveal">Claude for iOS และ Claude for Android — พร้อมทางลัดระดับระบบปฏิบัติการที่ทำให้เรียก Claude ได้โดยไม่ต้องเปิดแอป</p>
+      <div class="agenda reveal">
+        <span>Claude for iOS</span><span>App intents &amp; widgets</span><span>Claude for Android</span><span>Voice mode</span><span>Dictation</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/9387080-claude-mobile-apps" target="_blank" rel="noopener"><span>Collection: Claude Mobile apps</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 36 -->
+<section class="slide" id="s36" data-chapter="5" data-group="05 · Claude Mobile apps" data-nav="Claude for iOS">
+  <div class="inner">
+    <div class="eyebrow reveal">iOS</div>
+    <h2 class="title reveal">Claude for iOS และทางลัดระดับระบบ</h2>
+
+    <div class="grid g23 reveal">
+      <div>
+        <div class="grid g2" style="margin-top:0">
+          <div class="card stat"><div class="v">iOS 17.0+</div><div class="l">เวอร์ชันขั้นต่ำที่รองรับตัวแอป</div></div>
+          <div class="card stat"><div class="v">iOS 18+</div><div class="l">สำหรับ app intents, shortcuts, widgets และ controls</div></div>
+        </div>
+        <ul class="ticks">
+          <li><b>ติดตั้ง</b> — เปิด App Store ค้นหา “Claude by Anthropic” แล้วกด <b>Get</b></li>
+          <li><b>Ask Claude intent</b> — ถามด้วยเสียงหรือข้อความผ่าน Spotlight, Siri, Share menu และแอปอื่นที่รองรับ โดยไม่ต้องเปิดแอป Claude</li>
+          <li><b>Shortcuts</b> — สร้าง workflow เองโดยรวมหลาย action ของ “Ask Claude” เข้ากับแอปอื่น</li>
+          <li><b>Widget</b> — ปุ่มลัดสามอย่าง เริ่มแชทใหม่ เปิด dictation และถ่ายรูปเพื่อให้ Claude วิเคราะห์</li>
+          <li><b>Lock Screen &amp; Control Center</b> — เพิ่ม control “Analyze Photo with Claude” เพื่อวิเคราะห์ภาพได้ทันทีโดยไม่ต้องปลดล็อกเครื่องหรือเปิดแอป</li>
+        </ul>
+      </div>
+      <div class="card plain flat">
+        <span class="k">ควรรู้ก่อนใช้</span>
+        <h4>ทุกทางลัดนับโควตาเดียวกัน</h4>
+        <p>การใช้งานผ่าน intents, shortcuts, widgets และ controls ทั้งหมด <b>นับรวมใน usage limit</b> ของบัญชีเรา</p>
+        <div class="rule" style="margin:16px 0"></div>
+        <h4>ยกเลิก subscription ต้องทำเอง</h4>
+        <p>ถ้าลบแอปทิ้งขณะที่ยังมี subscription แบบเสียเงินอยู่ ระบบ <b>จะไม่ยกเลิกให้อัตโนมัติ</b> ต้องเข้าไปยกเลิกเองใน account settings</p>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/9266462-install-claude-for-ios" target="_blank" rel="noopener"><span>Install Claude for iOS</span></a>
+      <a href="https://support.claude.com/en/articles/10263469-use-claude-app-intents-shortcuts-and-widgets-on-ios" target="_blank" rel="noopener"><span>Use Claude app intents, shortcuts, and widgets on iOS</span></a>
+      <a href="https://support.claude.com/en/articles/10302511-access-claude-for-ios-on-your-lock-screen-control-center-and-action-button" target="_blank" rel="noopener"><span>Lock Screen, Control Center, and Action button</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 37 -->
+<section class="slide" id="s37" data-chapter="5" data-group="05 · Claude Mobile apps" data-nav="Claude for Android">
+  <div class="inner">
+    <div class="eyebrow reveal">Android</div>
+    <h2 class="title reveal">Claude for Android</h2>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">ข้อกำหนด</span><h4>Android 8.0 Oreo ขึ้นไป</h4><p>หากไม่เจอแอปใน Play Store อาจเป็นเพราะข้อจำกัดด้านภูมิภาคหรือความเข้ากันได้ของอุปกรณ์</p></div>
+      <div class="card"><span class="k">ติดตั้ง</span><h4>ผ่าน Google Play</h4><p>เปิด Play Store ค้นหา “Claude by Anthropic” แล้วกด <b>Install</b> จากหน้ารายการแอป</p></div>
+      <div class="card"><span class="k">ฟีเจอร์</span><h4>Widget และการเชื่อมกับแอปอื่น</h4><p>รองรับ widget บนหน้าจอโฮม การเรียกใช้ร่วมกับแอป Android อื่น รวมถึง voice mode และ dictation</p></div>
+    </div>
+
+    <div class="note reveal">
+      <b>เหมือน iOS —</b> การสมัคร Pro หรือ Max ผ่านแอปจะผูกกับ store ของแพลตฟอร์มนั้น และ<b>ต้องยกเลิกเอง</b>หากถอนการติดตั้งแอปทิ้งขณะยังมี subscription อยู่ · แอปทั้งสองแพลตฟอร์มมีข้อกำหนดเรื่อง <b>อายุขั้นต่ำ</b> ในการเข้าใช้งาน
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/9612887-install-claude-for-android" target="_blank" rel="noopener"><span>Install Claude for Android</span></a>
+      <a href="https://support.claude.com/en/articles/10534883-use-the-claude-widget-on-android" target="_blank" rel="noopener"><span>Use the Claude widget on Android</span></a>
+      <a href="https://support.claude.com/en/articles/11869629-use-claude-with-android-apps" target="_blank" rel="noopener"><span>Use Claude with Android apps</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 38 -->
+<section class="slide" id="s38" data-chapter="5" data-group="05 · Claude Mobile apps" data-nav="Voice mode &amp; dictation">
+  <div class="inner">
+    <div class="eyebrow reveal">Voice</div>
+    <h2 class="title reveal">Voice mode — คุยกับ Claude ด้วยเสียง</h2>
+    <p class="lead reveal">ใช้ได้บน <b>Claude Mobile (iOS และ Android), Claude Desktop และบนเว็บ</b> ครอบคลุมทุกแผนตั้งแต่ Free, Pro, Max, Team จนถึง Enterprise</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">วิธีใช้</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li>กดไอคอนรูปคลื่นเสียงในหน้าจอสนทนา</li>
+          <li>เลือกระหว่างโหมด <b>hands-free</b> ที่ Claude ตอบเมื่อเราหยุดพูดตามธรรมชาติ กับ <b>push-to-talk</b> ที่กดค้างไว้ขณะพูด</li>
+          <li>สลับระหว่างข้อความกับเสียงกลางบทสนทนาได้</li>
+          <li>ปรับเสียงและความเร็วการพูดที่ Settings &gt; General บน web/desktop หรือปรับระหว่างสนทนาบนมือถือ</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">ข้อควรรู้</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li><b>เสียงเป็นชุดที่คัดมาแล้ว</b> — เพื่อป้องกันการปลอมแปลงเสียงบุคคล</li>
+          <li><b>รองรับหลายภาษา</b> — สถานะ beta ตั้งภาษาของเสียงแยกจากภาษาที่แสดงผลได้ และขอให้สลับภาษากลางบทสนทนาได้</li>
+          <li><b>นับโควตาปกติ</b> — บทสนทนาด้วยเสียงนับรวมใน usage limit ตามแผนที่ใช้อยู่ ไม่มีแพ็กเกจพิเศษแบบใช้เสียงไม่จำกัด</li>
+          <li><b>ใช้เครื่องมือที่เชื่อมไว้ได้</b> — เช่น Gmail, Google Calendar, Google Docs และ Slack และใช้โมเดลรุ่นเดียวกับที่ใช้ในแชท</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11101966-use-voice-mode" target="_blank" rel="noopener"><span>Use voice mode</span></a>
+      <a href="https://support.claude.com/en/articles/10065434-use-dictation-on-claude-mobile" target="_blank" rel="noopener"><span>Use dictation on Claude Mobile</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 06 · CONNECTORS ══════════════ -->
+<section class="slide chapter" id="s39" data-chapter="6" data-group="06 · Connectors" data-nav="เปิดบท Connectors">
+  <div class="inner">
+    <div class="no reveal">06</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Six</div>
+      <h2 class="reveal">Connectors</h2>
+      <p class="lead reveal">ชั้นที่ทำให้ Claude ออกจากกล่องแชท — เข้าถึงข้อมูลในแอปที่เราใช้อยู่จริง และลงมือทำงานในระบบเหล่านั้นได้ ผ่านมาตรฐานเปิดชื่อ <b>Model Context Protocol (MCP)</b></p>
+      <div class="agenda reveal">
+        <span>Connectors คืออะไร</span><span>Directory vs Custom</span><span>Desktop vs Web</span><span>Remote MCP</span><span>Tool access</span><span>ความปลอดภัย</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/15399129-connectors" target="_blank" rel="noopener"><span>Collection: Connectors</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 40 -->
+<section class="slide" id="s40" data-chapter="6" data-group="06 · Connectors" data-nav="Connectors คืออะไร">
+  <div class="inner">
+    <div class="eyebrow reveal">พื้นฐาน</div>
+    <h2 class="title reveal">Connectors ทำให้ Claude เข้าถึงแอปของเรา</h2>
+    <p class="lead reveal">Connectors ให้ Claude เข้าถึงแอปและบริการต่าง ๆ ดึงข้อมูลของเรา และลงมือทำงานภายในบริการที่เชื่อมต่อไว้ — ทั้งหมดทำงานผ่าน <b>MCP</b></p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <span class="k">Type 01</span>
+        <h4>Directory connectors</h4>
+        <p>integration สำเร็จรูปที่ผ่านการตรวจสอบแล้ว เช่น Google Workspace, Linear และ Slack</p>
+        <p>เพิ่มได้จากปุ่ม <b>+</b> ในแชท หรือ <b>Settings &gt; Customize &gt; Connectors</b> แล้วกด Connect เพื่อยืนยันตัวตนผ่าน OAuth ของบริการนั้น</p>
+      </div>
+      <div class="card">
+        <span class="k">Type 02</span>
+        <h4>Custom connectors</h4>
+        <p>สร้างเองด้วย remote MCP server · ใช้ได้ทุกแผน โดยผู้ใช้ Free จำกัดที่ <b>1 connector</b></p>
+        <p>เพิ่มที่ <b>Settings &gt; Customize &gt; Connectors &gt; Add custom connector</b></p>
+      </div>
+      <div class="card">
+        <span class="k">Type 03</span>
+        <h4>Desktop extensions</h4>
+        <p>local MCP servers ที่ติดตั้งบน Claude Desktop สำหรับเครื่องมือที่รันอยู่บนเครื่องเรา (ดูบทที่ 04)</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>สิทธิ์และความปลอดภัย —</b> Connector สืบทอด <b>สิทธิ์เดิมที่เรามีในระบบต้นทาง</b> ไม่ได้ให้สิทธิ์เพิ่ม · admin ขององค์กรสามารถจำกัดการเขียนแต่ยังอนุญาตให้อ่านได้ · การส่งข้อมูลมีการเข้ารหัส แต่บริการของบุคคลที่สามอยู่ภายใต้เงื่อนไขของตัวเอง และอาจอยู่นอกสหรัฐฯ
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" target="_blank" rel="noopener"><span>Use connectors to extend Claude's capabilities</span></a>
+      <a href="https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq" target="_blank" rel="noopener"><span>Anthropic Connectors Directory FAQ</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 41 -->
+<section class="slide" id="s41" data-chapter="6" data-group="06 · Connectors" data-nav="Desktop vs Web connectors">
+  <div class="inner">
+    <div class="eyebrow reveal">เลือกให้ถูกแบบ</div>
+    <h2 class="title wide reveal">Remote (web) หรือ Desktop (local MCP)</h2>
+
+    <div class="figure reveal">
+      <svg viewBox="0 0 900 250" role="img" aria-label="แผนภาพเปรียบเทียบ remote connectors กับ desktop extensions">
+        <text class="svg-s" x="30" y="24">REMOTE / WEB CONNECTORS</text>
+        <rect class="svg-node-a" x="30" y="38" width="390" height="72" rx="14"/>
+        <text class="svg-t" x="50" y="68">เชื่อมจาก cloud ของ Anthropic</text>
+        <text class="svg-s" x="50" y="92">Slack · Notion · GitHub · SaaS ที่ล็อกอินผ่านเว็บ</text>
+
+        <rect class="svg-node" x="30" y="128" width="120" height="52" rx="11"/>
+        <text class="svg-s" x="48" y="150">ใช้ได้ทุก surface</text>
+        <text class="svg-s" x="48" y="168">web · mobile</text>
+        <rect class="svg-node" x="165" y="128" width="120" height="52" rx="11"/>
+        <text class="svg-s" x="183" y="150">Cowork</text>
+        <text class="svg-s" x="183" y="168">Desktop</text>
+        <rect class="svg-node" x="300" y="128" width="120" height="52" rx="11"/>
+        <text class="svg-s" x="318" y="150">Claude Code</text>
+        <text class="svg-s" x="318" y="168">ไม่ต้องตั้งค่าเพิ่ม</text>
+
+        <line x1="455" y1="18" x2="455" y2="230" class="svg-l" stroke-dasharray="4 6"/>
+
+        <text class="svg-s" x="490" y="24">DESKTOP EXTENSIONS — LOCAL MCP</text>
+        <rect class="svg-node-a" x="490" y="38" width="380" height="72" rx="14"/>
+        <text class="svg-t" x="510" y="68">รันบนเครื่องของเราเอง</text>
+        <text class="svg-s" x="510" y="92">ฐานข้อมูล local · ไฟล์ · folder · แอปที่ต้องใช้สิทธิ์ระดับ OS</text>
+
+        <rect class="svg-node" x="490" y="128" width="180" height="52" rx="11"/>
+        <text class="svg-s" x="508" y="150">Claude Desktop</text>
+        <text class="svg-s" x="508" y="168">เท่านั้น</text>
+        <rect class="svg-node" x="690" y="128" width="180" height="52" rx="11"/>
+        <text class="svg-s" x="708" y="150">Claude Code</text>
+        <text class="svg-s" x="708" y="168">ไม่รองรับ web / mobile</text>
+
+        <rect class="svg-node" x="30" y="198" width="840" height="34" rx="10"/>
+        <text class="svg-s" x="50" y="220">Plugins รวมได้ทั้งสองแบบ — ประเภทที่รวมอยู่ข้างในเป็นตัวกำหนดว่าใช้ได้บนแพลตฟอร์มไหน</text>
+      </svg>
+    </div>
+
+    <div class="note reveal">
+      <b>กฎง่าย ๆ —</b> ถ้าเป็นบริการบน cloud ที่เราล็อกอินผ่านเว็บ ให้ใช้ <b>remote connector</b> เพราะเชื่อมครั้งเดียวแล้วใช้ได้ทุก surface โดยไม่ต้องตั้งค่าเพิ่ม · ถ้าเป็นเครื่องมือที่รันบนเครื่องเรา หรือสิ่งที่ไม่สามารถอยู่บน cloud ได้ ให้ใช้ <b>desktop extension</b>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors" target="_blank" rel="noopener"><span>When to use desktop and web connectors</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 42 -->
+<section class="slide" id="s42" data-chapter="6" data-group="06 · Connectors" data-nav="Custom connectors (MCP)">
+  <div class="inner">
+    <div class="eyebrow reveal">Build your own</div>
+    <h2 class="title reveal">Custom connectors ด้วย remote MCP</h2>
+    <p class="lead reveal">Custom connector เชื่อม Claude เข้ากับ remote MCP server ที่โฮสต์ไว้บนอินเทอร์เน็ต ตามมาตรฐานเปิด Model Context Protocol</p>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">Team · Enterprise (เฉพาะ Owner)</span>
+        <h4>เพิ่มให้ทั้งองค์กร</h4>
+        <ol class="steps" style="margin-top:6px">
+          <li>ไปที่ <b>Organization settings &gt; Connectors &gt; Add &gt; Custom &gt; Web</b></li>
+          <li>ใส่ URL ของ remote MCP server</li>
+          <li>ตั้งค่า OAuth credentials เพิ่มเติมได้ตามต้องการ</li>
+          <li>จากนั้นสมาชิกแต่ละคนไปเชื่อมเองที่ <b>Customize &gt; Connectors</b></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="k">Pro · Max (รายบุคคล)</span>
+        <h4>เพิ่มให้ตัวเอง</h4>
+        <ol class="steps" style="margin-top:6px">
+          <li>ไปที่ <b>Customize &gt; Connectors &gt; Add custom connector</b></li>
+          <li>ใส่ URL ของ server</li>
+          <li>ตั้งค่า OAuth เพิ่มเติมได้ตามต้องการ</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="note warn reveal">
+      <b>ข้อจำกัดด้าน network ที่สำคัญ —</b> Claude เชื่อมต่อไปยัง remote MCP server ของเรา <b>จาก cloud infrastructure ของ Anthropic ไม่ใช่จากเครื่องเรา</b> ดังนั้น server ต้องเข้าถึงได้จากอินเทอร์เน็ตสาธารณะ · ถ้าโฮสต์ไว้หลัง VPN หรือเครือข่ายภายใน ต้อง allowlist ช่วง IP ของ Anthropic ที่ firewall
+    </div>
+
+    <div class="note warn reveal">
+      <b>เชื่อมเฉพาะ server ที่ไว้ใจได้ —</b> remote MCP server สามารถอ่าน สร้าง แก้ไข และลบข้อมูลในแอปที่เชื่อมต่อได้ตามที่ผู้พัฒนากำหนดไว้ · อ่าน OAuth permissions ให้ละเอียดก่อนกดอนุญาต และคอยติดตามว่า Claude เรียกใช้ tool อะไรบ้าง
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener"><span>Get started with custom connectors using remote MCP</span></a>
+      <a href="https://support.claude.com/en/articles/15537633-authorize-mcp-connectors-for-your-entire-organization" target="_blank" rel="noopener"><span>Authorize MCP connectors for your entire organization</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 43 -->
+<section class="slide" id="s43" data-chapter="6" data-group="06 · Connectors" data-nav="Tool access modes">
+  <div class="inner">
+    <div class="eyebrow reveal">Tool access</div>
+    <h2 class="title wide reveal">คุมว่า connector ไหนถูกโหลดเข้าบทสนทนา</h2>
+    <p class="lead reveal">ยิ่งมี connector มาก ยิ่งกินพื้นที่ใน context ตั้งแต่ต้นบทสนทนา — เลือกโหมดให้เหมาะกับจำนวนที่เชื่อมไว้</p>
+
+    <div class="grid g3 reveal">
+      <div class="card">
+        <span class="k">ค่าเริ่มต้น</span>
+        <h4>Auto</h4>
+        <p>Claude ตัดสินใจเองแบบ dynamic ว่าจะโหลด connector ไหนตามงานที่กำลังทำอยู่ · เหมาะกับการใช้งานทั่วไปที่มีเครื่องมือหลายตัว</p>
+      </div>
+      <div class="card">
+        <span class="k">น้อยกว่า 10 ตัว</span>
+        <h4>Always available</h4>
+        <p>โหลด connector ทั้งหมดตั้งแต่เริ่มทุกบทสนทนา · เหมาะเมื่อมี connector ไม่มากและใช้บ่อย แต่กินพื้นที่บทสนทนามากกว่าตั้งแต่ต้น</p>
+      </div>
+      <div class="card">
+        <span class="k">10 ตัวขึ้นไป</span>
+        <h4>On demand</h4>
+        <p>ไม่โหลดจนกว่า Claude จะค้นหาตัวที่ตรงกับงาน · เหมาะกับคนที่มี connector เยอะ หรือเจอปัญหาบทสนทนายาวเกิน แลกกับการเพิ่มขั้นตอนค้นหาหนึ่งรอบ</p>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <b>เปลี่ยนได้ระหว่างทาง —</b> เปิดแชท กดปุ่ม <b>+</b> หรือพิมพ์ <code>/</code> เพื่อเปิดเมนู แล้วเลือก <b>Connectors &gt; Tool access</b> · การตั้งค่ามีผลเฉพาะบทสนทนานั้นและเปลี่ยนได้ตลอดเวลา
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access" target="_blank" rel="noopener"><span>Manage Claude's tool access</span></a>
+      <a href="https://support.claude.com/en/articles/14730684-how-claude-suggests-connected-apps" target="_blank" rel="noopener"><span>How Claude suggests connected apps</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ CHAPTER 07 · CLAUDE IN CHROME ══════════════ -->
+<section class="slide chapter" id="s44" data-chapter="7" data-group="07 · Claude in Chrome" data-nav="เปิดบท Chrome">
+  <div class="inner">
+    <div class="no reveal">07</div>
+    <div>
+      <div class="eyebrow reveal">Chapter Seven</div>
+      <h2 class="reveal">Claude in Chrome</h2>
+      <p class="lead reveal">Extension ที่ให้ Claude อ่าน คลิก และนำทางเว็บไซต์แทนเรา — พลังสูงและความเสี่ยงก็สูงตาม จึงมาพร้อมระบบ permission ที่ต้องเข้าใจก่อนใช้</p>
+      <div class="agenda reveal">
+        <span>ติดตั้ง &amp; แผนที่ใช้ได้</span><span>ทำอะไรได้บ้าง</span><span>Permissions</span><span>ใช้อย่างปลอดภัย</span><span>Troubleshooting</span>
+      </div>
+      <footer class="ref reveal">
+        <span class="ref-l">อ้างอิง</span>
+        <a href="https://support.claude.com/en/collections/18031491-claude-in-chrome" target="_blank" rel="noopener"><span>Collection: Claude in Chrome</span></a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- 45 -->
+<section class="slide" id="s45" data-chapter="7" data-group="07 · Claude in Chrome" data-nav="เริ่มใช้ Chrome extension">
+  <div class="inner">
+    <div class="eyebrow reveal">Get started</div>
+    <h2 class="title reveal">ติดตั้งและใช้ Claude ในเบราว์เซอร์</h2>
+
+    <div class="grid g23 reveal">
+      <div>
+        <ol class="steps" style="margin-top:0">
+          <li>เข้า <b>Chrome Web Store</b> แล้วกด <b>Add to Chrome</b></li>
+          <li>ลงชื่อเข้าใช้ด้วยบัญชี Claude</li>
+          <li>Pin extension ไว้ที่แถบเครื่องมือ แล้วให้สิทธิ์ที่จำเป็น</li>
+        </ol>
+        <div class="rule"></div>
+        <p class="lead" style="margin-top:0">ทำงานร่วมกับ <b>Claude Desktop, Claude Code และ Claude Cowork</b> รวมถึงใช้งานผ่าน Chrome side panel ได้โดยตรง</p>
+      </div>
+      <div class="card plain flat">
+        <span class="k">แผนที่ใช้ได้</span>
+        <h4>ทุกแผนที่เสียเงิน</h4>
+        <p>Pro, Max, Team และ Enterprise</p>
+        <div class="rule" style="margin:14px 0"></div>
+        <p>ประสบการณ์บน side panel ต่างกันตามแผน — <b>Max และ Team</b> รัน Cowork sessions ได้ ส่วน <b>Pro</b> กำลังทยอยเปิดให้ใช้ · <b>Enterprise</b> ขึ้นกับการตั้งค่าของ admin</p>
+      </div>
+    </div>
+
+    <div class="grid g3 reveal">
+      <div class="card"><span class="k">Capability</span><h4>Workflow recording</h4><p>บันทึกขั้นตอนการทำงานไว้ใช้ซ้ำ (เฉพาะ classic side panel)</p></div>
+      <div class="card"><span class="k">Capability</span><h4>Multi-tab &amp; console logs</h4><p>จัดการหลายแท็บพร้อมกัน และอ่าน console log ของหน้าเว็บได้</p></div>
+      <div class="card"><span class="k">Capability</span><h4>Scheduled automation</h4><p>ตั้งเวลาให้งานประจำทำงานเองซ้ำ ๆ</p></div>
+      <div class="card"><span class="k">Capability</span><h4>1Password integration</h4><p>ลงชื่อเข้าใช้เว็บไซต์ได้อย่างปลอดภัย</p></div>
+      <div class="card"><span class="k">Capability</span><h4>Image uploads</h4><p>ส่งภาพเข้าไปเป็นบริบทในบทสนทนา</p></div>
+      <div class="card"><span class="k">Capability</span><h4>Enhanced navigation</h4><p>นำทางแพลตฟอร์มยอดนิยมอย่าง Gmail, Slack และ GitHub ได้ดีขึ้น</p></div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome" target="_blank" rel="noopener"><span>Get started with Claude in Chrome</span></a>
+      <a href="https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude" target="_blank" rel="noopener"><span>Get started with 1Password for Claude</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 46 -->
+<section class="slide" id="s46" data-chapter="7" data-group="07 · Claude in Chrome" data-nav="Permissions guide">
+  <div class="inner">
+    <div class="eyebrow reveal">Permissions</div>
+    <h2 class="title wide reveal">ระบบสิทธิ์สองชั้น: โหมด และ รายเว็บไซต์</h2>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">ชั้นที่ 1 · โหมดการอนุมัติ</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li><b>Manually approve</b> — Claude จะหยุดเพื่อขออนุมัติก่อนทำทุก action</li>
+          <li><b>Automatically approve</b> — ทำงานต่อเนื่องพร้อมตรวจความปลอดภัยไปด้วย และบล็อกอัตโนมัติเมื่อประเมินว่าไม่ปลอดภัย</li>
+          <li><b>Skip all approvals</b> — ไม่มีการตรวจสอบใด ๆ ทำงานโดยไม่หยุดถาม</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">ชั้นที่ 2 · สิทธิ์รายเว็บไซต์</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li><b>Allow this action</b> — อนุญาตเฉพาะครั้งนี้</li>
+          <li><b>Always allow actions on this site</b> — อนุญาตถาวรสำหรับเว็บนั้น ไม่ต้องถามซ้ำ</li>
+          <li><b>Decline</b> — ปฏิเสธ action นั้น</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note warn reveal">
+      <b>สามอย่างที่ต้องขออนุมัติเสมอ แม้จะตั้ง “Always allow” ไว้แล้ว —</b> การดาวน์โหลดไฟล์ · การกรอกข้อมูลที่อ่อนไหว · การให้ authorization ใด ๆ
+    </div>
+
+    <div class="note reveal">
+      <b>จัดการสิทธิ์ที่ให้ไปแล้ว —</b> เปิดเมนูการตั้งค่าของ extension แล้วไปที่หน้า <b>Permissions</b> เพื่อดูรายการ “Your approved sites” เพิกถอนสิทธิ์ของเว็บใดเว็บหนึ่ง และตรวจสอบประวัติการให้สิทธิ์ · admin ของแผน Team และ Enterprise ตั้ง <b>allowlist</b> หรือ <b>blocklist</b> ที่ <b>มีผลเหนือการตั้งค่าของผู้ใช้รายคน</b> ได้
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" target="_blank" rel="noopener"><span>Claude in Chrome permissions guide</span></a>
+      <a href="https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls" target="_blank" rel="noopener"><span>Claude in Chrome admin controls</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 47 -->
+<section class="slide" id="s47" data-chapter="7" data-group="07 · Claude in Chrome" data-nav="ใช้ Chrome อย่างปลอดภัย">
+  <div class="inner">
+    <div class="eyebrow reveal">Safety</div>
+    <h2 class="title reveal">ใช้ Claude in Chrome อย่างปลอดภัย</h2>
+    <p class="lead reveal">ภัยหลักคือ <b>prompt injection</b> — คำสั่งอันตรายที่ซ่อนอยู่ในเนื้อหาเว็บ แล้วหลอกให้ Claude ทำสิ่งที่เราไม่ได้สั่ง ระบบมี safety classifiers คอยตรวจจับและบล็อก แต่ความเสี่ยงไม่เป็นศูนย์</p>
+
+    <div class="grid g3 reveal">
+      <div class="card stat"><div class="v">&lt; 0.08%</div><div class="l">อัตราความสำเร็จของการโจมตีที่รู้จักแล้ว จากการทดสอบภายในของ Anthropic</div></div>
+      <div class="card">
+        <span class="k">เว็บที่เข้าไม่ได้</span>
+        <h4>Blocked categories</h4>
+        <p>เว็บเนื้อหาผู้ใหญ่ · เว็บที่รู้กันว่าละเมิดลิขสิทธิ์ · เว็บด้านการเงินซึ่งต้องได้รับอนุญาตก่อน</p>
+      </div>
+      <div class="card">
+        <span class="k">สิ่งที่ Claude ห้ามทำ</span>
+        <h4>Hard limits</h4>
+        <p>ซื้อขายหุ้น · หลบเลี่ยง captcha · กรอกข้อมูลอ่อนไหว · เก็บรวบรวมภาพใบหน้า</p>
+      </div>
+    </div>
+
+    <div class="grid g2 reveal">
+      <div class="card">
+        <span class="k">ต้องยืนยันก่อนเสมอ</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li>ดาวน์โหลดไฟล์</li>
+          <li>กรอกข้อมูลที่อ่อนไหว</li>
+          <li>เข้าถึงบัญชีทางการเงิน</li>
+          <li>ประมวลผลข้อมูลสุขภาพที่อยู่ภายใต้การกำกับดูแล</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="k">แนวปฏิบัติที่แนะนำ</span>
+        <ul class="ticks" style="margin-top:6px">
+          <li>เริ่มจากเว็บไซต์ที่ไว้ใจได้ก่อน</li>
+          <li>แยก browser profile สำหรับบัญชีที่อ่อนไหว</li>
+          <li>ใช้โหมด <b>Manually approve</b> เมื่อต้องการควบคุมมากขึ้น</li>
+          <li>อ่าน action ที่ Claude เสนอก่อนกดยืนยัน</li>
+          <li>อย่าใช้ extension ขณะเปิดข้อมูลลับอยู่</li>
+          <li>อย่าใช้จัดการเรื่องการเงิน กฎหมาย การแพทย์ หรือข้อมูลที่มีการกำกับดูแล</li>
+          <li><b>ผู้ใช้รับผิดชอบเต็มที่</b> ต่อทุก action ที่ Claude ทำแทนในเบราว์เซอร์</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely" target="_blank" rel="noopener"><span>Use Claude in Chrome safely</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 48 -->
+<section class="slide" id="s48" data-chapter="7" data-group="07 · Claude in Chrome" data-nav="Troubleshooting">
+  <div class="inner">
+    <div class="eyebrow reveal">Troubleshooting</div>
+    <h2 class="title wide reveal">เจอปัญหาบ่อย ๆ แก้อย่างไร</h2>
+
+    <div class="tblwrap reveal">
+      <table>
+        <thead><tr><th style="width:34%">อาการ</th><th>วิธีแก้</th></tr></thead>
+        <tbody>
+          <tr><td><b>หน้าตา side panel เปลี่ยนไป</b></td><td>หน้าจอแบบ Cowork เข้ามาแทน classic panel บนแผน Max / Team / Pro — กดจุดสามจุดแล้วเลือก <b>Switch back to classic</b> เพื่อกลับไปแบบเดิม</td></tr>
+          <tr><td><b>ไม่เห็น Cowork side panel</b></td><td>ผู้ใช้ Enterprise ต้องให้ admin เปิด Cowork บน cloud ก่อน · ผู้ใช้ Pro อาจต้องรอให้การทยอยเปิดใช้เสร็จ</td></tr>
+          <tr><td><b>Claude มองไม่เห็นหน้าเว็บ</b></td><td>รีเฟรชหน้า · เปิดใช้งาน extension · ให้สิทธิ์รายเว็บไซต์ · รอให้ JavaScript โหลดเสร็จ</td></tr>
+          <tr><td><b>Claude เข้าเว็บไซต์ไม่ได้</b></td><td>ตรวจว่าให้สิทธิ์เว็บนั้นแล้วหรือยัง · เช็คว่าเว็บอยู่ในหมวดที่ถูกบล็อกหรือไม่ (การเงิน เนื้อหาผู้ใหญ่ ฯลฯ) · ติดต่อ admin สำหรับแผน Team / Enterprise</td></tr>
+          <tr><td><b>ติดตั้งหรือลงชื่อเข้าใช้ไม่ได้</b></td><td>ยืนยันว่ามีแผนแบบเสียเงินที่ยัง active · ตรวจว่า admin เปิด extension ให้แล้ว · ล้าง cache และ cookies แล้วลงชื่อเข้าใช้ใหม่</td></tr>
+          <tr><td><b>สั่งงานแล้วไม่ทำงาน</b></td><td>อัปเดต Chrome · ปิด extension ตัวอื่นที่อาจรบกวน · รีเฟรชหน้าเว็บ</td></tr>
+          <tr><td><b>เชื่อมกับ Desktop หรือ Code ไม่ได้</b></td><td>รีสตาร์ตหรืออัปเดต Chrome extension · รีสตาร์ต Claude Desktop · ตรวจว่าสวิตช์เชื่อมต่อเปิดอยู่</td></tr>
+          <tr><td><b>ทำงานช้า</b></td><td>ปิดแท็บที่ไม่จำเป็น · แตกงานซับซ้อนออกเป็นขั้นตอนย่อย</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting" target="_blank" rel="noopener"><span>Claude in Chrome troubleshooting</span></a>
+      <a href="https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages" target="_blank" rel="noopener"><span>Troubleshoot Claude error messages</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════════ WRAP-UP ══════════════ -->
+<!-- 49 -->
+<section class="slide" id="s49" data-chapter="0" data-group="สรุป &amp; อ้างอิง" data-nav="เลือก surface ให้ถูกงาน">
+  <div class="inner">
+    <div class="eyebrow reveal">สรุป</div>
+    <h2 class="title wide reveal">งานแบบไหน ใช้ surface ไหน</h2>
+
+    <div class="tblwrap reveal">
+      <table>
+        <thead><tr><th style="width:30%">ถ้างานของเราคือ…</th><th style="width:24%">ใช้</th><th>เพราะ</th></tr></thead>
+        <tbody>
+          <tr><td>ถาม–ตอบ ร่างงานเขียน วิเคราะห์เอกสารที่แนบ</td><td><b>Chat บน claude.ai</b></td><td>เร็วที่สุด ประหยัดโควตาที่สุด ไม่ต้องติดตั้งอะไร</td></tr>
+          <tr><td>งานหลายขั้นตอนที่อยากสั่งแล้วเดินไปทำอย่างอื่น</td><td><b>Claude Cowork</b></td><td>ทำงานต่อได้เอง ผลิตไฟล์จริง และตั้งเวลาให้ทำซ้ำได้</td></tr>
+          <tr><td>แก้โค้ดใน repository ที่มีอยู่</td><td><b>Claude Code</b> (terminal / IDE)</td><td>เห็นทุกขั้นตอน คุมสิทธิ์ได้ละเอียดผ่าน settings</td></tr>
+          <tr><td>มอบงานโค้ดแล้วรอ pull request</td><td><b>Claude Code on the web</b></td><td>รันใน VM แยก และเปิด PR ให้อัตโนมัติ</td></tr>
+          <tr><td>ต้องให้ Claude เข้าถึงไฟล์หรือแอปในเครื่อง</td><td><b>Claude Desktop</b></td><td>เป็น surface เดียวที่ต่อ local MCP และให้ Cowork เข้าถึงเครื่องได้</td></tr>
+          <tr><td>ใช้งานระหว่างเดินทาง หรือถามด้วยเสียง</td><td><b>Mobile apps</b></td><td>มี voice mode, dictation, widgets และ app intents</td></tr>
+          <tr><td>ดึงข้อมูลจาก Slack, Google Workspace, GitHub ฯลฯ</td><td><b>Connectors</b></td><td>เชื่อมครั้งเดียว ใช้ได้ทุก surface และสืบทอดสิทธิ์เดิมของเรา</td></tr>
+          <tr><td>ให้ Claude ทำงานบนหน้าเว็บแทนเรา</td><td><b>Claude in Chrome</b></td><td>อ่าน คลิก และนำทางเว็บได้ พร้อมระบบ permission สองชั้น</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note reveal">
+      <b>สามหลักที่ใช้ได้กับทุก surface —</b> ① เริ่มจากสิทธิ์ที่แคบที่สุดแล้วค่อยขยาย ② งานที่เกี่ยวกับข้อมูลอ่อนไหวให้ใช้โหมด <b>Manually approve</b> เสมอ ③ ผู้ใช้รับผิดชอบต่อทุก action ที่ Claude ทำแทน
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" target="_blank" rel="noopener"><span>Where can I access Claude?</span></a>
+      <a href="https://support.claude.com/en/articles/14503520-available-beta-and-research-preview-features" target="_blank" rel="noopener"><span>Available beta and research preview features</span></a>
+    </footer>
+  </div>
+</section>
+
+<!-- 50 -->
+<section class="slide" id="s50" data-chapter="0" data-group="สรุป &amp; อ้างอิง" data-nav="แหล่งอ้างอิงทั้งหมด">
+  <div class="inner">
+    <div class="eyebrow reveal">Sources</div>
+    <h2 class="title wide reveal">แหล่งอ้างอิงทั้งหมด — Claude Help Center</h2>
+    <p class="lead reveal">ทุกเนื้อหาใน deck นี้เรียบเรียงจาก collection ทางการด้านล่าง ข้อมูล ณ วันที่ <b>13 สิงหาคม 2026</b> — เอกสารต้นทางมีการอัปเดตต่อเนื่อง ควรตรวจสอบหน้าอ้างอิงก่อนนำไปใช้ตัดสินใจ</p>
+
+    <div class="grid g4 reveal">
+      <a class="card" style="--accent:var(--c1);text-decoration:none" href="https://support.claude.com/en/collections/4078531-claude" target="_blank" rel="noopener">
+        <span class="k">Collection 01</span><h4>Claude ↗</h4><p class="url">/collections/4078531-claude</p></a>
+      <a class="card" style="--accent:var(--c2);text-decoration:none" href="https://support.claude.com/en/collections/19667525-claude-cowork" target="_blank" rel="noopener">
+        <span class="k">Collection 02</span><h4>Claude Cowork ↗</h4><p class="url">/collections/19667525-claude-cowork</p></a>
+      <a class="card" style="--accent:var(--c3);text-decoration:none" href="https://support.claude.com/en/collections/14445694-claude-code" target="_blank" rel="noopener">
+        <span class="k">Collection 03</span><h4>Claude Code ↗</h4><p class="url">/collections/14445694-claude-code</p></a>
+      <a class="card" style="--accent:var(--c4);text-decoration:none" href="https://support.claude.com/en/collections/16163169-claude-desktop" target="_blank" rel="noopener">
+        <span class="k">Collection 04</span><h4>Claude Desktop ↗</h4><p class="url">/collections/16163169-claude-desktop</p></a>
+      <a class="card" style="--accent:var(--c5);text-decoration:none" href="https://support.claude.com/en/collections/9387080-claude-mobile-apps" target="_blank" rel="noopener">
+        <span class="k">Collection 05</span><h4>Claude Mobile apps ↗</h4><p class="url">/collections/9387080-claude-mobile-apps</p></a>
+      <a class="card" style="--accent:var(--c6);text-decoration:none" href="https://support.claude.com/en/collections/15399129-connectors" target="_blank" rel="noopener">
+        <span class="k">Collection 06</span><h4>Connectors ↗</h4><p class="url">/collections/15399129-connectors</p></a>
+      <a class="card" style="--accent:var(--c7);text-decoration:none" href="https://support.claude.com/en/collections/18031491-claude-in-chrome" target="_blank" rel="noopener">
+        <span class="k">Collection 07</span><h4>Claude in Chrome ↗</h4><p class="url">/collections/18031491-claude-in-chrome</p></a>
+      <a class="card flat" style="--accent:var(--ink3);text-decoration:none" href="https://support.claude.com/en/articles/12138966-release-notes" target="_blank" rel="noopener">
+        <span class="k">Always fresh</span><h4>Release notes ↗</h4><p>ติดตามฟีเจอร์ใหม่และการเปลี่ยนแปลงล่าสุด</p></a>
+    </div>
+
+    <div class="note reveal">
+      <b>หมายเหตุ —</b> deck นี้เป็นการ<b>สรุปและแปลเป็นภาษาไทย</b> ไม่ใช่เอกสารทางการของ Anthropic · ราคา ความพร้อมใช้งานตามแผน และฟีเจอร์ที่อยู่ในสถานะ beta หรือ research preview เปลี่ยนแปลงได้ตลอด · กรณีที่เนื้อหาขัดแย้งกัน <b>ให้ยึดตามเอกสารต้นทางบน support.claude.com เป็นหลัก</b>
+    </div>
+
+    <footer class="ref reveal">
+      <span class="ref-l">อ้างอิง</span>
+      <a href="https://support.claude.com/en/" target="_blank" rel="noopener"><span>Claude Help Center</span></a>
+      <a href="https://support.claude.com/en/articles/9015913-how-to-get-support" target="_blank" rel="noopener"><span>How to get support</span></a>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<nav class="dock" aria-label="ควบคุมสไลด์">
+  <button class="arrow" id="prev" aria-label="สไลด์ก่อนหน้า">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button id="menuBtn" aria-label="เปิดสารบัญ"><span id="counter">01 / 50</span></button>
+  <button class="arrow" id="next" aria-label="สไลด์ถัดไป">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</nav>
+
+<div class="overlay" id="overlay" role="dialog" aria-label="สารบัญสไลด์">
+  <div class="ov-head">
+    <h2>สารบัญสไลด์</h2>
+    <span>Esc / M เพื่อปิด</span>
+  </div>
+  <div class="ov-grid" id="ovGrid"></div>
+</div>
+
+<script src="assets/deck.js?v=1.0"></script>
+</body>
+</html>

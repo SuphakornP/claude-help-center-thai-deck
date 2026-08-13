@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+._*
+
+# editor / tooling
+.vscode/
+.idea/
+.playwright-mcp/
+
+# local scratch
+*.log
+tmp/
