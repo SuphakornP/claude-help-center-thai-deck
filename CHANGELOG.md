@@ -11,6 +11,34 @@ Deck นี้สรุปเนื้อหาจาก [Claude Help Center](ht
 
 ---
 
+## 2026-08-13 — ตรวจสอบความถูกต้องกับต้นทาง (รอบที่ 1)
+
+ไล่อ่านบทความต้นทางครบทั้ง 81 URL ที่ deck อ้างอิง พร้อม collection index ทั้ง 7 หัวข้อ
+ทุก URL ตอบกลับ HTTP 200 ไม่มี URL ใดถูก redirect ไปบทความอื่น และไม่มีบทความใดหายไปจาก collection
+
+**เปลี่ยน**
+
+- **สไลด์ 27** — กำกับว่า Claude Code on the web อยู่ในสถานะ **research preview** ตามตารางสถานะทางการ
+  ([Available beta and research preview features](https://support.claude.com/en/articles/14503520-available-beta-and-research-preview-features) ระบุ “Claude Code web (CCR) — Research preview”)
+- **สไลด์ 38** — กำกับว่า **voice mode ทั้งฟีเจอร์**อยู่ในสถานะ beta ไม่ใช่แค่การรองรับภาษาอื่นนอกจากอังกฤษ
+  (“Voice mode is a beta feature available to all plans…” — [Use voice mode](https://support.claude.com/en/articles/11101966-use-voice-mode))
+- **สไลด์ 45** — 1Password integration อยู่ในสถานะ **beta** ใช้ได้เฉพาะ **Claude Desktop บน macOS** และต้องมี Claude in Chrome
+  ([Get started with 1Password for Claude](https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude))
+- **สไลด์ 28** — สิทธิ์ที่ Claude GitHub App ขอคือ contents, **issues** และ pull requests (เดิมระบุแค่ contents กับ pull requests)
+  ([Set up Code Review](https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code))
+
+**เพิ่ม**
+
+- **สไลด์ 27** — เพิ่มลิงก์อ้างอิงไปยังหน้า Available beta and research preview features รวมลิงก์อ้างอิงเป็น 90
+
+**ไม่เปลี่ยน (ตรวจแล้วของเดิมถูก)**
+
+- **สไลด์ 46** — รอบตรวจอัตโนมัติเสนอให้แก้ “สามอย่างที่ต้องขออนุมัติเสมอ” เป็นสี่อย่าง โดยนับ “Managing site permissions” เป็นรายการที่ 4
+  ตรวจโครงสร้าง HTML ของต้นทางแล้วพบว่า `<ul>` มีเพียง 3 `<li>` ส่วน “Managing site permissions” เป็น `<h3>` ของหัวข้อถัดไป — **ของเดิมถูกต้อง จึงไม่แก้**
+  ([Claude in Chrome permissions guide](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide))
+
+**อ้างอิง ณ วันที่** 13 สิงหาคม 2026
+
 ## 2026-08-13 — เผยแพร่ครั้งแรก
 
 **เพิ่ม**
