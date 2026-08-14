@@ -6,7 +6,7 @@
 <title>Claude · Cowork · Code — คู่มือฉบับ Slide Deck</title>
 <meta name="description" content="Slide deck ภาษาไทยสรุปการใช้งาน Claude, Claude Cowork, Claude Code, Claude Desktop, Claude Mobile apps, Connectors และ Claude in Chrome อ้างอิงจาก Claude Help Center อย่างเป็นทางการ">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="assets/style.css?v=1.0">
+<link rel="stylesheet" href="assets/style.css?v=1.1">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C96442'/><path d='M28 70 L50 28 L72 70 M37 58 L63 58' stroke='%23FAF9F5' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
@@ -16,6 +16,11 @@
 <header class="topbar">
   <a class="brand" href="#s1"><span class="dot"></span><b>Claude Help Center</b><span class="t2">· Slide Deck ภาษาไทย</span></a>
   <div class="tools">
+    <div class="zoomctl" role="group" aria-label="ขนาดตัวอักษร">
+      <button id="zoomOut" aria-label="ลดขนาดตัวอักษร" title="ลดขนาดตัวอักษร ( − )">A</button>
+      <button id="zoomVal" aria-label="รีเซ็ตขนาดตัวอักษรเป็น 100%" title="รีเซ็ตเป็น 100% ( 0 )">100%</button>
+      <button id="zoomIn" class="big" aria-label="เพิ่มขนาดตัวอักษร" title="เพิ่มขนาดตัวอักษร ( + )">A</button>
+    </div>
     <button class="icobtn" id="themeBtn" aria-label="สลับธีม">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
     </button>
@@ -1802,6 +1807,8 @@
   </button>
 </nav>
 
+<div class="zoomtoast" id="zoomToast" aria-live="polite"></div>
+
 <div class="overlay" id="overlay" role="dialog" aria-label="สารบัญสไลด์">
   <div class="ov-head">
     <h2>สารบัญสไลด์</h2>
@@ -1810,6 +1817,6 @@
   <div class="ov-grid" id="ovGrid"></div>
 </div>
 
-<script src="assets/deck.js?v=1.0"></script>
+<script src="assets/deck.js?v=1.1"></script>
 </body>
 </html>
