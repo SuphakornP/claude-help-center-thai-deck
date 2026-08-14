@@ -9,8 +9,9 @@ A single-page Thai-language web slide deck (50 slides) summarising the seven off
 dependencies, no external fonts or CDN requests. Deployed via GitHub Pages from `main` root:
 https://suphakornp.github.io/claude-help-center-thai-deck/
 
-Three files carry everything: `index.html` (all 50 slides as static markup), `assets/style.css`
-(design system + responsive + print), `assets/deck.js` (navigation controller).
+Three files carry the deck itself: `index.html` (all 50 slides as static markup), `assets/style.css`
+(design system + responsive + print), `assets/deck.js` (navigation controller). `CHANGELOG.md` records
+every content revision — see *Weekly content refresh* below before editing it.
 
 ## Running and verifying
 
@@ -36,6 +37,9 @@ eyeballing screenshots. The checks worth re-running after any structural or copy
 - no slide overflows: `scrollHeight - clientHeight` and `scrollWidth - clientWidth` ≈ 0 at 1512×982
 - at 390px wide, no `.ref` sits below `.dock`'s top edge, and `document.body.scrollWidth === innerWidth`
 - `Home` / `End` / a menu jump land on an exactly-aligned `scrollLeft` matching the counter
+- **the same overflow checks at each text-zoom level**, on both viewports. Zoom re-flows the whole
+  deck, so a change that fits at 100% can still burst the column at 175%; step through with
+  `document.dispatchEvent(new KeyboardEvent('keydown', {key: '+', bubbles: true}))`
 
 Reference links are the deck's core promise. To re-check them all:
 
@@ -63,13 +67,13 @@ staggered entrance; `deck.js` assigns each one a `--i` index, so ordering is pos
 
 ## CSS invariants that will silently break the deck
 
-These four were each the cause of a real bug. They look like cleanups; they are not.
+These five were each the cause of a real bug. They look like cleanups; they are not.
 
-1. **`--accent-soft` / `--accent-line` are declared on `.slide` (style.css:82), not only `:root`.**
+1. **`--accent-soft` / `--accent-line` are declared on the `.slide` rule, not only `:root`.**
    A custom property substitutes `var(--accent)` using the computed value *on the element where it is
    declared*. Declared only in `:root`, every chapter renders chapter 1's terracotta regardless of its
-   `data-chapter`. The `:root` copies at style.css:29 are inert leftovers — do not "de-duplicate" by
-   deleting the `.slide` block.
+   `data-chapter`. The `:root` copies are inert leftovers — do not "de-duplicate" by deleting the
+   `.slide` block.
 
 2. **`.deck` must not set `scroll-behavior: smooth`.** `deck.js` picks smooth (adjacent step) vs instant
    (multi-slide jump) per call, and `behavior: 'auto'` defers to the CSS value. With CSS smooth, an
@@ -111,11 +115,34 @@ scroll at the very next snap point.
   Features the source marks beta / research preview are labelled as such in the slide.
 - Thai display type needs a taller line box than Latin — upper vowels and tone marks (`ใช้`, `ให้`) clip
   at the tight line-heights that look right for English. Headings sit at 1.18–1.32.
-- Wide tables live in `.tblwrap` (`min-width: 560px`) and scroll inside themselves; `deck.js` appends a
-  Thai scroll hint to any wrapper that actually overflows.
+- Wide tables live in `.tblwrap` and scroll inside themselves, with a Thai scroll hint `deck.js`
+  appends to any wrapper that actually overflows. The 560px floor on `table` is dropped to `0` by a
+  container query between 641px and 1000px, so a zoomed table compresses in place instead of hiding
+  its right-hand column mid-presentation; below 640px the floor returns and it scrolls again.
 
 ## Deploying
 
 `main` is served directly by GitHub Pages (root, no workflow). Pushing to `main` publishes; a rebuild
-takes roughly 20–40s. Asset URLs carry `?v=1.0` — bump both in `index.html` when shipping a CSS or JS
-change, or returning visitors keep the cached copy.
+takes roughly 20–40s. Both asset URLs in `index.html` carry a `?v=` query (currently `1.1`) — bump it
+when shipping a CSS or JS change, or returning visitors keep the cached copy.
+
+## Weekly content refresh
+
+A scheduled cloud agent re-reads every cited support.claude.com article each Monday, edits any claim
+the source has moved, and opens a pull request. It **squash-merges its own PR** when four checks pass
+— HTML parses, every slide keeps a `.ref` footer, the slide count still matches the dock and README,
+and all cited URLs return 200 — and leaves the PR open with a comment when one fails. Nothing waits
+for a human, so an edit that cannot be traced to an official page must not reach the PR at all.
+
+Consequences for anything you change here:
+
+- **Keep the four checks passing and cheap to run.** They are the only gate between an automated edit
+  and the live site.
+- **`CHANGELOG.md` has a house format** the routine follows: a dated section per audit under the
+  categories `เปลี่ยน` / `เพิ่ม` / `ลบ` / `แก้`, every bullet naming the fact and linking the article
+  that proves it, plus a `ไม่เปลี่ยน (ตรวจแล้วของเดิมถูก)` section for changes considered and
+  rejected. Match it.
+- **Verify counted claims against markup, not stripped text.** The first audit proposed changing
+  "three protected actions" to four because a following `<h3>` looked like a fourth `<li>` once tags
+  were removed. For anything enumerated, read the `<ul>`.
+- A `content-refresh/YYYY-MM-DD` branch appearing on the remote is this routine, not a stray branch.
