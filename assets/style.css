@@ -38,6 +38,7 @@
 
   --pad: clamp(20px, 4.2vw, 76px);
   --dock-h: 74px;
+  --zoom: 1;          /* presentation text scale — see .inner */
 }
 
 [data-theme="dark"] {
@@ -128,8 +129,25 @@ img, svg { max-width: 100%; }
 .slide::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 
 /* margin:auto centers when there is room and never clips when there isn't —
-   unlike justify-content:center, which pushes overflow past the scroll origin */
-.inner { width: 100%; max-width: 1140px; margin: auto; }
+   unlike justify-content:center, which pushes overflow past the scroll origin.
+
+   `zoom` scales the whole content box — text, padding, borders — and unlike
+   `transform: scale()` it reflows, so lines re-wrap and the slide simply scrolls
+   when the content grows.
+
+   Only max-width is divided by the zoom, and width is left at a plain 100%:
+   percentages already resolve inside the zoomed coordinate space, so dividing
+   those too would shrink the column by the square of the factor. The px
+   max-width does need converting, or the 1140px cap would render 1140 × zoom
+   wide and burst the column. */
+.inner {
+  zoom: var(--zoom);
+  width: 100%;
+  max-width: calc(1140px / var(--zoom));
+  margin: auto;
+  container-type: inline-size;
+  container-name: slide;
+}
 
 /* reveal animation */
 .reveal { opacity: 0; transform: translateY(14px); }
@@ -175,7 +193,42 @@ img, svg { max-width: 100%; }
   background: var(--c1);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--c1) 18%, transparent);
 }
-.tools { display: flex; gap: 6px; }
+.tools { display: flex; gap: 6px; align-items: center; }
+
+/* text-size control */
+.zoomctl {
+  display: flex; align-items: center; gap: 2px;
+  padding: 2px; border-radius: 10px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(10px);
+}
+.zoomctl button {
+  height: 28px; min-width: 28px; padding: 0 6px;
+  border-radius: 7px; color: var(--ink2);
+  font-family: var(--mono); font-size: 12px; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background .16s, color .16s;
+}
+.zoomctl button:hover { background: var(--wash); color: var(--ink); }
+.zoomctl button[disabled] { opacity: .3; cursor: default; }
+.zoomctl button[disabled]:hover { background: none; color: var(--ink2); }
+#zoomVal { min-width: 46px; font-size: 11px; letter-spacing: .02em; color: var(--ink3); }
+#zoomVal.on { color: var(--accent-strong, var(--c1)); font-weight: 600; }
+.zoomctl .big { font-size: 15px; }
+
+/* brief centre-screen readout while adjusting */
+.zoomtoast {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.94);
+  z-index: 80; pointer-events: none;
+  font-family: var(--mono); font-size: 30px; letter-spacing: -.01em;
+  padding: 18px 30px; border-radius: 16px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(14px); box-shadow: var(--shadow); color: var(--ink);
+  opacity: 0; transition: opacity .18s, transform .18s;
+}
+.zoomtoast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .icobtn {
   width: 34px; height: 34px; display: grid; place-items: center;
   border-radius: 9px; border: 1px solid var(--line);
@@ -285,6 +338,10 @@ strong, b { font-weight: 600; color: var(--ink); }
    grids & cards
    ============================================================ */
 .grid { display: grid; gap: 14px; margin-top: 22px; }
+/* grid children must be allowed to shrink below their min-content width,
+   or a long unbroken run (a Thai clause, a nowrap chip) forces the track wider
+   than the column and the whole slide scrolls sideways */
+.grid > *, .g23 > * { min-width: 0; }
 .g2 { grid-template-columns: repeat(2, 1fr); }
 .g3 { grid-template-columns: repeat(3, 1fr); }
 .g4 { grid-template-columns: repeat(4, 1fr); }
@@ -499,8 +556,10 @@ kbd {
    ============================================================ */
 .chapter { background: var(--bg); }
 .chapter .inner { display: grid; grid-template-columns: auto 1fr; gap: clamp(20px, 4vw, 54px); align-items: center; }
+/* cqw, not vw: the chapter numeral shares a row with the title, so it has to
+   shrink when text zoom narrows the column — the viewport hasn't changed */
 .chapter .no {
-  font-size: clamp(78px, 15vw, 190px); font-weight: 600; line-height: .82;
+  font-size: clamp(56px, 17cqw, 190px); font-weight: 600; line-height: .82;
   letter-spacing: -.06em; color: var(--accent); opacity: .92;
   font-variant-numeric: tabular-nums;
 }
@@ -532,6 +591,30 @@ kbd {
 /* ============================================================
    responsive
    ============================================================ */
+
+/* Container queries, not media queries, drive the in-slide layout: text zoom
+   shrinks the content column without changing the viewport, so a viewport-based
+   breakpoint would leave a 3-up grid trying to fit a 350px column. These fire on
+   the column's own width, so they cover both a small screen and a zoomed slide. */
+@container slide (max-width: 900px) {
+  .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
+  .g23 { grid-template-columns: 1fr; }
+  /* a long identifier in a nowrap <code> is wider than a narrow column;
+     `anywhere` only breaks when it would otherwise overflow */
+  code { white-space: normal; overflow-wrap: anywhere; }
+}
+/* Mid-range columns — what text zoom produces on a projector. Drop the table's
+   floor so it compresses and wraps in place; sideways-scrolling a table during a
+   presentation hides the right-hand column. Below 640px the floor comes back and
+   the table scrolls with its hint, which is the better trade on a phone. */
+@container slide (min-width: 641px) and (max-width: 1000px) {
+  table { min-width: 0; }
+}
+@container slide (max-width: 640px) {
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  h2.title { max-width: none; }
+}
+
 @media (max-width: 1000px) {
   .g4 { grid-template-columns: repeat(2, 1fr); }
   .g23 { grid-template-columns: 1fr; }
@@ -546,6 +629,7 @@ kbd {
   .chapter .no { font-size: clamp(64px, 22vw, 110px); }
   .ref a span { max-width: 24ch; }
   .brand .t2 { display: none; }
+  #zoomVal { display: none; }
   table { min-width: 520px; }
   .ov-list { grid-template-columns: 1fr; }
 }
@@ -563,6 +647,7 @@ kbd {
   .deck { display: block; height: auto; overflow: visible; }
   .slide { height: auto; min-height: auto; page-break-after: always; padding: 28px; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .topbar, .dock, .progress, .overlay, .hint { display: none !important; }
+  .topbar, .dock, .progress, .overlay, .hint, .zoomtoast { display: none !important; }
+  .inner { zoom: 1; width: 100%; max-width: 1140px; }
   .card:hover { transform: none; }
 }

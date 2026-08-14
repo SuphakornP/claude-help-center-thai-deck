@@ -92,6 +92,7 @@
   }, { passive: true });
 
   window.addEventListener('resize', function () {
+    applyZoom(zoomI, false);   // re-clamp: a narrower window may forbid this level
     deck.scrollTo({ left: index * deck.clientWidth, behavior: 'auto' });
   });
 
@@ -114,8 +115,63 @@
       case 'Escape':     overlay.classList.remove('open'); break;
       case 'm': case 'M': overlay.classList.toggle('open'); break;
       case 't': case 'T': toggleTheme(); break;
+      case '+': case '=': e.preventDefault(); applyZoom(zoomI + 1, true); break;
+      case '-': case '_': e.preventDefault(); applyZoom(zoomI - 1, true); break;
+      case '0':           e.preventDefault(); applyZoom(ZOOM.indexOf(1), true); break;
     }
   });
+
+  /* ---------- text zoom ----------
+     For projecting onto a big screen: scales the slide content so the back of
+     the room can read it. Levels are multiplicative on the whole content box,
+     so the deck re-wraps and scrolls rather than clipping. */
+  var ZOOM = [0.9, 1, 1.15, 1.3, 1.5, 1.75, 2];
+  var zoomI = 1;
+  var zoomOut  = document.getElementById('zoomOut');
+  var zoomIn   = document.getElementById('zoomIn');
+  var zoomVal  = document.getElementById('zoomVal');
+  var zoomToast= document.getElementById('zoomToast');
+  var toastTimer;
+
+  /* Zoom narrows the content column (the viewport is unchanged), so past a point
+     the column is too thin to lay anything out. Offer only the levels this screen
+     can actually render: the widest zoom that still leaves a ~300px column. */
+  var MIN_COL = 300;
+  function maxZoomIndex() {
+    var s = slides[index] || slides[0];
+    var cs = getComputedStyle(s);
+    var avail = s.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    var last = 0;
+    for (var i = 0; i < ZOOM.length; i++) {
+      if (avail / ZOOM[i] >= MIN_COL) last = i; else break;
+    }
+    return last;
+  }
+
+  function applyZoom(i, announce) {
+    var cap = maxZoomIndex();
+    zoomI = Math.max(0, Math.min(cap, i));
+    var z = ZOOM[zoomI];
+    document.documentElement.style.setProperty('--zoom', z);
+    var pct = Math.round(z * 100) + '%';
+    zoomVal.textContent = pct;
+    zoomVal.classList.toggle('on', z !== 1);
+    zoomOut.disabled = zoomI === 0;
+    zoomIn.disabled  = zoomI >= cap;
+    try { localStorage.setItem('claude-deck-zoom', String(zoomI)); } catch (err) {}
+    // the slide got taller or shorter; keep the deck locked to the current slide
+    deck.scrollTo({ left: index * deck.clientWidth, behavior: 'auto' });
+    if (announce) {
+      zoomToast.textContent = 'ขนาดตัวอักษร ' + pct;
+      zoomToast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { zoomToast.classList.remove('show'); }, 900);
+    }
+  }
+
+  zoomOut.addEventListener('click', function () { applyZoom(zoomI - 1, true); });
+  zoomIn.addEventListener('click',  function () { applyZoom(zoomI + 1, true); });
+  zoomVal.addEventListener('click', function () { applyZoom(ZOOM.indexOf(1), true); });
 
   /* ---------- theme ---------- */
   function applyTheme(mode) {
@@ -190,6 +246,10 @@
     try { saved = localStorage.getItem('claude-deck-theme'); } catch (err) {}
     applyTheme(saved || (window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+    var savedZoom;
+    try { savedZoom = localStorage.getItem('claude-deck-zoom'); } catch (err) {}
+    applyZoom(savedZoom === null || savedZoom === undefined ? 1 : parseInt(savedZoom, 10) || 0, false);
 
     var start = 0;
     if (location.hash) {

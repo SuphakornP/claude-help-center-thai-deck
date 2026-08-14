@@ -83,6 +83,18 @@ These four were each the cause of a real bug. They look like cleanups; they are 
 4. **Slide bottom padding is `--dock-h + 30px + env(safe-area-inset-bottom)`.** Less than that and the
    per-slide reference links disappear under the floating dock on phones.
 
+5. **Text zoom: only `max-width` is divided by `--zoom`, `width` stays `100%`.** Percentages already
+   resolve inside the zoomed coordinate space, so dividing both shrinks the column by the *square* of
+   the factor — at 175% the column came out 452px instead of 651px. The px `max-width` does need the
+   division, or the 1140px cap renders 1140 × zoom wide.
+
+**In-slide layout is driven by container queries (`@container slide`), not media queries.** Zoom
+narrows the content column without changing the viewport, so a viewport breakpoint would leave a 3-up
+grid trying to fit a 350px column. `.inner` is the named container — which also means it cannot
+respond to its own query, so the chapter numeral sizes itself in `cqw` instead. Any new in-slide
+breakpoint belongs in a container query; the media queries are for the chrome (dock, topbar, table
+floor) only.
+
 Related: `deck.js` disables `scroll-snap-type` for the duration of a programmatic jump, because
 `scroll-snap-stop: always` (needed so touch swipes advance one slide at a time) otherwise halts the
 scroll at the very next snap point.
