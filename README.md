@@ -77,9 +77,10 @@ python3 -m http.server 8000
 
 1. ไล่อ่านบทความต้นทางทั้ง 81 URL ที่ deck อ้างอิงไว้ **โดยใช้ support.claude.com เป็นแหล่งเดียวเท่านั้น**
 2. เทียบข้อเท็จจริงในสไลด์กับบทความล่าสุด (ราคา แผน เวอร์ชัน OS สถานะ beta / research preview ฯลฯ)
-3. ถ้าพบว่าต่าง — แตก branch `content-refresh/YYYY-MM-DD` แก้ไข อัปเดต [CHANGELOG.md](CHANGELOG.md)
-   กับ README แล้วเปิด pull request กลับ `main`
-4. ถ้าไม่พบความเปลี่ยนแปลง — จบรอบโดยไม่เปิด PR
+3. ถ้าพบว่าต่าง — แตก branch `content-refresh/YYYY-MM-DD` แก้สไลด์ แล้วแก้ไฟล์ที่เขียนข้อเท็จจริงเดียวกันซ้ำไว้
+   ให้ตรงกันใน commit เดียว: [CHANGELOG.md](CHANGELOG.md), README และ [SPEAKER-NOTES.md](SPEAKER-NOTES.md)
+   จากนั้นเปิด pull request กลับ `main`
+4. ถ้าไม่พบความเปลี่ยนแปลง — จบรอบโดยไม่เปิด PR ไม่ทิ้ง branch ค้าง
 
 **การ merge เป็นอัตโนมัติ แต่มีเงื่อนไข** — PR จะถูก squash merge เองก็ต่อเมื่อผ่าน verification suite ครบทั้ง 4 ข้อ:
 HTML tag ครบคู่ · ทุกสไลด์ยังมี reference footer · จำนวนสไลด์ตรงกับ counter และ README · ทุก URL ที่อ้างอิงยังตอบกลับ 200
@@ -87,6 +88,9 @@ HTML tag ครบคู่ · ทุกสไลด์ยังมี reference
 
 ทุกการเปลี่ยนแปลงยังผ่าน PR เสมอเพื่อเก็บ audit trail ไม่มีการ push เข้า `main` โดยตรง — และเนื่องจาก `main`
 deploy ขึ้น GitHub Pages ทันที การแก้ที่ไม่มีหลักฐานจากต้นทางยืนยันจึงถูกสั่งห้ามไม่ให้ใส่เข้า PR ตั้งแต่แรก
+
+**ถ้า routine push ไม่ได้** (เช่น GitHub connection เป็น read-only) มันจะไม่เงียบหาย — จะสร้าง git patch
+ส่งกลับมาให้ พร้อมรายงานว่าไม่มีอะไรถูกเผยแพร่ เป็นหัวข้อแรกของสรุป
 
 ## ข้อจำกัดและข้อควรทราบ
 
