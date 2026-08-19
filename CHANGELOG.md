@@ -11,6 +11,23 @@ Deck นี้สรุปเนื้อหาจาก [Claude Help Center](ht
 
 ---
 
+## 2026-08-19 — แก้ข้อเท็จจริงที่ต้นทางเปลี่ยน + ผูก SPEAKER-NOTES เข้ากับรอบตรวจ
+
+**เปลี่ยน**
+
+- **สไลด์ 19** — scheduled tasks ใช้ได้ครบทุกแผนที่เสียเงินแล้ว ตัดข้อความ "ทยอยเปิดให้ใช้เริ่มจากแผน Max" ออก
+  ("Scheduled tasks are available in Cowork for all paid plans (Pro, Max, Team, Enterprise)"
+  — [Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork))
+- **SPEAKER-NOTES.md** — แก้ตาราง "ข้อเท็จจริงที่ห้ามพูดผิด" ให้ตรงกับข้างบน และระบุว่า Cowork บนเว็บกับมือถือ
+  อยู่ในสถานะ beta ตามที่ต้นทางเขียนไว้
+
+**เพิ่ม**
+
+- บันทึกใน [CLAUDE.md](CLAUDE.md) ว่า `SPEAKER-NOTES.md` เขียนข้อเท็จจริงซ้ำจากสไลด์ 5 ข้อ
+  ถ้าแก้ข้อไหนในสไลด์ต้องแก้ที่บทพูดด้วยใน commit เดียวกัน ไม่งั้นคนจะพูดตัวเลขเก่าบนเวที
+- routine รายสัปดาห์ถูกสั่งให้ตรวจและอัปเดต `SPEAKER-NOTES.md` ควบคู่กับสไลด์ด้วยแล้ว
+
+
 ## 2026-08-14 — ขยายตัวอักษรสำหรับฉายจอใหญ่
 
 **เพิ่ม**
