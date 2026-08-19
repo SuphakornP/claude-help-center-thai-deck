@@ -129,8 +129,11 @@ when shipping a CSS or JS change, or returning visitors keep the cached copy.
 
 ## Weekly content refresh
 
-A scheduled cloud agent re-reads every cited support.claude.com article each Monday, edits any claim
-the source has moved, and opens a pull request. It **squash-merges its own PR** when four checks pass
+A scheduled agent re-reads every cited support.claude.com article each Monday, edits any claim the
+source has moved, and opens a pull request. It runs on the maintainer's Mac via `launchd`
+(`scripts/run-weekly-audit.sh`, installed by `scripts/install-weekly-audit.sh`); its instructions live
+in `scripts/weekly-audit-prompt.md`, so changing how the audit behaves means editing that file, not
+this one. It **squash-merges its own PR** when four checks pass
 — HTML parses, every slide keeps a `.ref` footer, the slide count still matches the dock and README,
 and all cited URLs return 200 — and leaves the PR open with a comment when one fails. Nothing waits
 for a human, so an edit that cannot be traced to an official page must not reach the PR at all.
