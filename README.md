@@ -73,7 +73,7 @@ python3 -m http.server 8000
 ## การอัปเดตอัตโนมัติ
 
 เอกสารต้นทางบน support.claude.com เปลี่ยนแปลงต่อเนื่อง จึงมี scheduled agent ทำงาน
-**ทุกวันจันทร์ 09:00 น. (Asia/Bangkok)** เพื่อ:
+**ทุกวันจันทร์ 09:00 น.** บนเครื่อง Mac ของผู้ดูแล (ตั้งผ่าน `launchd`) เพื่อ:
 
 1. ไล่อ่านบทความต้นทางทั้ง 81 URL ที่ deck อ้างอิงไว้ **โดยใช้ support.claude.com เป็นแหล่งเดียวเท่านั้น**
 2. เทียบข้อเท็จจริงในสไลด์กับบทความล่าสุด (ราคา แผน เวอร์ชัน OS สถานะ beta / research preview ฯลฯ)
@@ -89,8 +89,26 @@ HTML tag ครบคู่ · ทุกสไลด์ยังมี reference
 ทุกการเปลี่ยนแปลงยังผ่าน PR เสมอเพื่อเก็บ audit trail ไม่มีการ push เข้า `main` โดยตรง — และเนื่องจาก `main`
 deploy ขึ้น GitHub Pages ทันที การแก้ที่ไม่มีหลักฐานจากต้นทางยืนยันจึงถูกสั่งห้ามไม่ให้ใส่เข้า PR ตั้งแต่แรก
 
-**ถ้า routine push ไม่ได้** (เช่น GitHub connection เป็น read-only) มันจะไม่เงียบหาย — จะสร้าง git patch
-ส่งกลับมาให้ พร้อมรายงานว่าไม่มีอะไรถูกเผยแพร่ เป็นหัวข้อแรกของสรุป
+**ถ้ารันไม่สำเร็จ** มันจะไม่เงียบหาย — เขียน log ไว้ทุกครั้งที่ `~/Library/Logs/claude-deck-audit/`
+และถ้า push ไม่ได้จะทิ้ง branch ไว้ในเครื่องพร้อมรายงานว่าไม่มีอะไรถูกเผยแพร่
+
+### ติดตั้งบนเครื่องใหม่
+
+```bash
+bash scripts/install-weekly-audit.sh
+```
+
+| | |
+|---|---|
+| ตารางเวลา | จันทร์ 09:00 — ถ้าเครื่องหลับอยู่ `launchd` จะรันให้ตอนเปิดเครื่องครั้งถัดไป ไม่ข้ามรอบ |
+| ทำงานที่ | clone แยกใน `~/.local/state/claude-deck-audit/repo` ไม่ยุ่งกับสำเนาที่คุณแก้อยู่ |
+| Log | `~/Library/Logs/claude-deck-audit/` เก็บ 12 สัปดาห์ |
+| ทดสอบ preflight | `AUDIT_DRY_RUN=1 bash scripts/run-weekly-audit.sh` |
+| สั่งรันเต็มทันที | `launchctl kickstart -p gui/$(id -u)/com.suphakorn.claude-deck-audit` |
+| ถอนออก | `launchctl bootout gui/$(id -u)/com.suphakorn.claude-deck-audit` |
+
+รันแบบไม่มีคนเฝ้า จึงใช้ `--permission-mode bypassPermissions` ซึ่งข้ามการถามอนุมัติทุกครั้ง —
+เป็นเหตุผลที่มันทำงานใน clone แยกต่างหาก ไม่ใช่ในโฟลเดอร์ที่คุณแก้ไฟล์อยู่
 
 ## ข้อจำกัดและข้อควรทราบ
 
