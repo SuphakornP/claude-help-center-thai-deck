@@ -11,7 +11,8 @@ https://suphakornp.github.io/claude-help-center-thai-deck/
 
 Three files carry the deck itself: `index.html` (all 50 slides as static markup), `assets/style.css`
 (design system + responsive + print), `assets/deck.js` (navigation controller). `CHANGELOG.md` records
-every content revision — see *Weekly content refresh* below before editing it.
+every content revision and `SPEAKER-NOTES.md` is a 15–20 minute rehearsal script for presenting the
+deck — both are coupled to the slides, so read *Weekly content refresh* below before editing either.
 
 ## Running and verifying
 
@@ -146,3 +147,11 @@ Consequences for anything you change here:
   "three protected actions" to four because a following `<h3>` looked like a fourth `<li>` once tags
   were removed. For anything enumerated, read the `<ul>`.
 - A `content-refresh/YYYY-MM-DD` branch appearing on the remote is this routine, not a stray branch.
+
+**`SPEAKER-NOTES.md` restates deck facts and can silently contradict them.** Its *ข้อเท็จจริงที่ห้ามพูดผิด*
+table duplicates five claims that also live in the slides — computer use being Pro/Max only, Cowork's
+per-plan availability, the scheduled-task rollout, artifact sharing and who its usage bills to, and how
+quota is shared. A slide edit that lands without the matching edit here leaves someone reading the old
+number aloud to a room, which is worse than a stale web page nobody is quoting. Whenever a change to
+`index.html` touches one of those claims, grep `SPEAKER-NOTES.md` for it and update both in the same
+commit. Its per-section slide deep links (`#s14`, `#s19`, …) break the same way if slides are renumbered.
