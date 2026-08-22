@@ -12,7 +12,8 @@ https://suphakornp.github.io/claude-help-center-thai-deck/
 Three files carry the deck itself: `index.html` (all 50 slides as static markup), `assets/style.css`
 (design system + responsive + print), `assets/deck.js` (navigation controller). `CHANGELOG.md` records
 every content revision and `SPEAKER-NOTES.md` is a 15–20 minute rehearsal script for presenting the
-deck — both are coupled to the slides, so read *Weekly content refresh* below before editing either.
+deck — both are coupled to the slides, so read *Files that restate the deck's facts* below before
+editing either.
 
 ## Running and verifying
 
@@ -127,34 +128,25 @@ scroll at the very next snap point.
 takes roughly 20–40s. Both asset URLs in `index.html` carry a `?v=` query (currently `1.1`) — bump it
 when shipping a CSS or JS change, or returning visitors keep the cached copy.
 
-## Weekly content refresh
+## Files that restate the deck's facts
 
-A scheduled agent re-reads every cited support.claude.com article each Monday, edits any claim the
-source has moved, and opens a pull request. It runs on the maintainer's Mac via `launchd`
-(`scripts/run-weekly-audit.sh`, installed by `scripts/install-weekly-audit.sh`); its instructions live
-in `scripts/weekly-audit-prompt.md`, so changing how the audit behaves means editing that file, not
-this one. It **squash-merges its own PR** when four checks pass
-— HTML parses, every slide keeps a `.ref` footer, the slide count still matches the dock and README,
-and all cited URLs return 200 — and leaves the PR open with a comment when one fails. Nothing waits
-for a human, so an edit that cannot be traced to an official page must not reach the PR at all.
+There was a scheduled agent that re-audited every cited article each Monday and merged its own pull
+request. It has been removed — the deck is no longer in active use, so nothing keeps it in sync with
+the source automatically. If it is picked up again, re-verify before presenting: prices, plan
+availability, OS minimums and beta / research-preview status all move.
 
-Consequences for anything you change here:
+Two files restate facts that also live in the slides, and they go stale together:
 
-- **Keep the four checks passing and cheap to run.** They are the only gate between an automated edit
-  and the live site.
-- **`CHANGELOG.md` has a house format** the routine follows: a dated section per audit under the
-  categories `เปลี่ยน` / `เพิ่ม` / `ลบ` / `แก้`, every bullet naming the fact and linking the article
-  that proves it, plus a `ไม่เปลี่ยน (ตรวจแล้วของเดิมถูก)` section for changes considered and
-  rejected. Match it.
-- **Verify counted claims against markup, not stripped text.** The first audit proposed changing
-  "three protected actions" to four because a following `<h3>` looked like a fourth `<li>` once tags
-  were removed. For anything enumerated, read the `<ul>`.
-- A `content-refresh/YYYY-MM-DD` branch appearing on the remote is this routine, not a stray branch.
+- **`SPEAKER-NOTES.md`** — its *ข้อเท็จจริงที่ห้ามพูดผิด* table duplicates five claims: computer use
+  being Pro/Max only, Cowork's availability per surface and plan, the scheduled-task plan coverage,
+  artifact sharing and whose usage it bills, and how quota is shared. A slide edit that lands without
+  the matching edit here leaves someone reading an old number aloud to a room. Its per-slide deep
+  links (`#s14`, `#s19`, …) break the same way if slides are renumbered.
+- **`README.md`** — restates the slide count, the link counts and the date the links were last checked.
 
-**`SPEAKER-NOTES.md` restates deck facts and can silently contradict them.** Its *ข้อเท็จจริงที่ห้ามพูดผิด*
-table duplicates five claims that also live in the slides — computer use being Pro/Max only, Cowork's
-per-plan availability, the scheduled-task rollout, artifact sharing and who its usage bills to, and how
-quota is shared. A slide edit that lands without the matching edit here leaves someone reading the old
-number aloud to a room, which is worse than a stale web page nobody is quoting. Whenever a change to
-`index.html` touches one of those claims, grep `SPEAKER-NOTES.md` for it and update both in the same
-commit. Its per-section slide deep links (`#s14`, `#s19`, …) break the same way if slides are renumbered.
+`CHANGELOG.md` records content revisions under `เปลี่ยน` / `เพิ่ม` / `ลบ` / `แก้`, each bullet naming
+the fact and linking the article that proves it. Match that format if you add to it.
+
+One habit worth keeping from the audits: **verify counted claims against markup, not stripped text.**
+An audit once proposed changing "three protected actions" to four because a following `<h3>` looked
+like a fourth `<li>` once tags were removed. For anything enumerated, read the `<ul>`.
